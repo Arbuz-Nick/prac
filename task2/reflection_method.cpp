@@ -172,9 +172,9 @@ void reflection_method(const int n,
     std::ofstream result;
     result.open("result_omp_polus.csv", std::ios_base::app);
     for (int j = 0; j < n; j++) {
-      std::cout << x[j] << " ";
+      result << x[j] << " ";
     }
-    std::cout << std::endl;
+    result << std::endl;
     result << end_time - start_time << ";" << to_r_time - start_time << ";"
            << end_time - to_r_time << ";" << proc_num << ";" << n << ";"
            << residual(A, x_global, start_b) << ";" << error(x_global, n)
