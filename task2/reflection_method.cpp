@@ -162,7 +162,10 @@ void reflection_method(const int n,
 
   if (rank == 0) {
     A.T();
-
+    double* file_x = new double[n];
+    for (int j = 0; j < n; j++) {
+      file_x[j] = x_global[j];
+    }
     std::cout << "To R Matrix time: " << to_r_time - start_time << std::endl;
     std::cout << "Gauss time: " << end_time - to_r_time << std::endl;
     std::cout << "Full time: " << end_time - start_time << std::endl;
@@ -171,13 +174,10 @@ void reflection_method(const int n,
 
     std::ofstream result;
     result.open("result_omp_polus.csv", std::ios_base::app);
-    for (int j = 0; j < n; j++) {
-      result << x[j] << " ";
-    }
-    result << std::endl;
+
     result << end_time - start_time << ";" << to_r_time - start_time << ";"
            << end_time - to_r_time << ";" << proc_num << ";" << n << ";"
-           << residual(A, x_global, start_b) << ";" << error(x_global, n)
+           << residual(A, file_x, start_b) << ";" << error(file_x, n)
            << std::endl;
     result.close();
     delete[](start_b);
