@@ -1,0 +1,33 @@
+#! /bin/bash
+rm -rf ./out_files/omp/1000/*.out
+rm -rf ./err_files/omp/1000/*.err
+
+rm -rf ./out_files/omp/4000/*.out
+rm -rf ./err_files/omp/4000/*.err
+
+rm -rf ./out_files/omp/7000/*.out
+rm -rf ./err_files/omp/7000/*.err
+
+rm -rf ./out_files/omp/10000/*.out
+rm -rf ./err_files/omp/10000/*.err
+
+rm -rf ./out_files/omp/13000/*.out
+rm -rf ./err_files/omp/13000/*.err
+
+rm -rf ./out_files/omp/16000/*.out
+rm -rf ./err_files/omp/16000/*.err
+
+echo "FullTime;ToRTime;GaussTime;Nthreads;MatrixSize;Residual">result_omp_polus.csv
+./make_dirs
+./lsf_files/make_lsf
+
+make omp_polus
+for ((j = 1000; j <= 16000; j += 3000))
+do
+for ((i = 1; i <= 128; i *= 2))
+do
+bsub < ./lsf_files/$j/$i.lsf
+sleep 1
+done
+wait
+done

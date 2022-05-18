@@ -1,0 +1,102 @@
+Sender: LSF System <lsfadmin@polus-c4-ib.bmc.hpc.cs.msu.ru>
+Subject: Job 878029: <#BSUB -n 1;#BSUB -W 00:15;#BSUB -o "./out_files/10000/2.out";#BSUB -e "./err_files/10000/2.err";#BSUB -R "span[hosts=1]";OMP_NUM_THREADS=2 ./prog 10000> in cluster <MSUCluster> Done
+
+Job <#BSUB -n 1;#BSUB -W 00:15;#BSUB -o "./out_files/10000/2.out";#BSUB -e "./err_files/10000/2.err";#BSUB -R "span[hosts=1]";OMP_NUM_THREADS=2 ./prog 10000> was submitted from host <polus-ib.bmc.hpc.cs.msu.ru> by user <edu-cmc-sqi21-01> in cluster <MSUCluster> at Thu Apr 28 02:05:22 2022
+Job was executed on host(s) <polus-c4-ib.bmc.hpc.cs.msu.ru>, in queue <short>, as user <edu-cmc-sqi21-01> in cluster <MSUCluster> at Thu Apr 28 02:07:53 2022
+</home_edu/edu-cmc-sqi21/edu-cmc-sqi21-01> was used as the home directory.
+</home_edu/edu-cmc-sqi21/edu-cmc-sqi21-01/Prac/6_sem_prac/task1> was used as the working directory.
+Started at Thu Apr 28 02:07:53 2022
+Terminated at Thu Apr 28 02:14:40 2022
+Results reported at Thu Apr 28 02:14:40 2022
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#BSUB -n 1
+#BSUB -W 00:15
+#BSUB -o "./out_files/10000/2.out"
+#BSUB -e "./err_files/10000/2.err"
+#BSUB -R "span[hosts=1]"
+OMP_NUM_THREADS=2 ./prog 10000
+
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   806.64 sec.
+    Max Memory :                                 972 MB
+    Average Memory :                             755.98 MB
+    Total Requested Memory :                     -
+    Delta Memory :                               -
+    Max Swap :                                   -
+    Max Processes :                              4
+    Max Threads :                                6
+    Run time :                                   406 sec.
+    Turnaround time :                            558 sec.
+
+The output (if any) follows:
+
+To R Matrix time: 400.394
+Gauss time: 0.783205
+Full time: 401.178
+Residual: 4.14347e-11
+
+
+PS:
+
+Read file <./err_files/10000/2.err> for stderr output of this job.
+
+Sender: LSF System <lsfadmin@polus-c4-ib.bmc.hpc.cs.msu.ru>
+Subject: Job 879564: <#BSUB -n 1;#BSUB -W 00:15;#BSUB -o "./out_files/10000/2.out";#BSUB -e "./err_files/10000/2.err";#BSUB -R "span[hosts=1]";OMP_NUM_THREADS=2 ./prog 10000> in cluster <MSUCluster> Done
+
+Job <#BSUB -n 1;#BSUB -W 00:15;#BSUB -o "./out_files/10000/2.out";#BSUB -e "./err_files/10000/2.err";#BSUB -R "span[hosts=1]";OMP_NUM_THREADS=2 ./prog 10000> was submitted from host <polus-ib.bmc.hpc.cs.msu.ru> by user <edu-cmc-sqi21-01> in cluster <MSUCluster> at Wed May  4 21:25:14 2022
+Job was executed on host(s) <polus-c4-ib.bmc.hpc.cs.msu.ru>, in queue <short>, as user <edu-cmc-sqi21-01> in cluster <MSUCluster> at Wed May  4 21:29:58 2022
+</home_edu/edu-cmc-sqi21/edu-cmc-sqi21-01> was used as the home directory.
+</home_edu/edu-cmc-sqi21/edu-cmc-sqi21-01/Prac/6_sem_prac/task1> was used as the working directory.
+Started at Wed May  4 21:29:58 2022
+Terminated at Wed May  4 21:37:18 2022
+Results reported at Wed May  4 21:37:18 2022
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#BSUB -n 1
+#BSUB -W 00:15
+#BSUB -o "./out_files/10000/2.out"
+#BSUB -e "./err_files/10000/2.err"
+#BSUB -R "span[hosts=1]"
+OMP_NUM_THREADS=2 ./prog 10000
+
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   874.77 sec.
+    Max Memory :                                 965 MB
+    Average Memory :                             759.70 MB
+    Total Requested Memory :                     -
+    Delta Memory :                               -
+    Max Swap :                                   -
+    Max Processes :                              4
+    Max Threads :                                6
+    Run time :                                   439 sec.
+    Turnaround time :                            724 sec.
+
+The output (if any) follows:
+
+To R Matrix time: 434.405
+Gauss time: 0.768188
+Full time: 435.173
+Residual: 4.14347e-11
+
+
+PS:
+
+Read file <./err_files/10000/2.err> for stderr output of this job.
+

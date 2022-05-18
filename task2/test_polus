@@ -1,0 +1,17 @@
+#! /bin/bash
+echo "FullTime;ToRTime;GaussTime;Nthreads;MatrixSize;Residual;Error">result_omp_polus.csv
+./make_dirs
+
+make
+for ((j = 0; j < 4; j += 1))
+do
+for ((j = 1000; j <= 13000; j += 3000))
+do
+for ((i = 1; i <= 32; i *= 2))
+do
+mpisubmit.pl -p $i --stdout ./out_files/mpi/$j/$i.out --stderr ./err_files/mpi/$j/$i.err ./prog -- $j
+sleep 1
+done
+wait
+done
+done
