@@ -118,7 +118,7 @@ void reflection_method(const int n,
 
   if (n % proc_num != 0) {
     if (rank == n % proc_num) {
-            MPI_Send(b, n, MPI_DOUBLE, 0, 0, MPI_COMM_WORLD);
+      MPI_Send(b, n, MPI_DOUBLE, 0, 0, MPI_COMM_WORLD);
     } else if (rank == 0) {
       MPI_Recv(start_b, n, MPI_DOUBLE, n % proc_num, 0, MPI_COMM_WORLD,
                MPI_STATUS_IGNORE);
@@ -171,14 +171,18 @@ void reflection_method(const int n,
 
     std::ofstream result;
     result.open("result_omp_polus.csv", std::ios_base::app);
+    for (int j = 0; j < n; j++) {
+      std::cout << x[j] << " ";
+    }
+    std::cout << std::endl;
     result << end_time - start_time << ";" << to_r_time - start_time << ";"
            << end_time - to_r_time << ";" << proc_num << ";" << n << ";"
            << residual(A, x_global, start_b) << ";" << error(x_global, n)
            << std::endl;
     result.close();
-    delete[] (start_b);
+    delete[](start_b);
   }
-  delete[] (x);
-  delete[] (x_global);
-  delete[] (a);
+  delete[](x);
+  delete[](x_global);
+  delete[](a);
 }
