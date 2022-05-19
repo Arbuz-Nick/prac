@@ -69,6 +69,11 @@ void reflection_method(const int n,
     for (int i = 0; i < n; ++i)
       start_b[i] = 0;
   }
+
+  if (rank == 0) {
+    int r = 0;
+    std::cout << r++ << std::endl;
+  }
   double* x = new double[n];
   double* x_global = new double[n];
   for (int i = 0; i < n; ++i) {
@@ -93,6 +98,10 @@ void reflection_method(const int n,
         a[j] /= a_norm;
     }
 
+    if (rank == 0) {
+      std::cout << r++ << std::endl;
+    }
+
     MPI_Bcast(a, len, MPI_DOUBLE, i % proc_num, MPI_COMM_WORLD);
 
     for (int col = i / proc_num; col < div_size; col++) {
@@ -112,6 +121,10 @@ void reflection_method(const int n,
       for (int j = 0; j < len; j++)
         b[j + i] -= sum * a[j];
     }
+  }
+
+  if (rank == 0) {
+    std::cout << r++ << std::endl;
   }
   MPI_Barrier(MPI_COMM_WORLD);
   double to_r_time = now();
@@ -145,6 +158,9 @@ void reflection_method(const int n,
     }
   }
 
+  if (rank == 0) {
+    std::cout << r++ << std::endl;
+  }
   MPI_Allreduce(x, x_global, n, MPI_DOUBLE, MPI_SUM, MPI_COMM_WORLD);
   double end_time = now();
 
@@ -161,6 +177,7 @@ void reflection_method(const int n,
   }
 
   if (rank == 0) {
+    std::cout << r++ << std::endl;
     A.T();
     double* file_x = new double[n];
     for (int j = 0; j < n; j++) {
