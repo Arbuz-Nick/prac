@@ -1,8 +1,8 @@
 #! /bin/bash
-echo "FullTime;ToRTime;GaussTime;Nthreads;MatrixSize;Residual;Error">result_omp_polus.csv
-./make_dirs
+# echo "FullTime;ToRTime;GaussTime;Nthreads;MatrixSize;Residual;Error">result_omp_polus.csv
+# ./make_dirs
 
-make
+# make
 for ((j = 0; j < 4; j += 1))
 do
 for ((j = 1000; j <= 10000; j += 3000))

@@ -1,5 +1,8 @@
 #! /bin/bash
 
+rm -rf ./err_files
+rm -rf ./out_files
+
 mkdir ./err_files
 mkdir ./out_files
 
