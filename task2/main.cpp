@@ -14,10 +14,6 @@ static void generate_vector(const Matrix& A, double* b) {
 }
 
 int main(int argc, char* argv[]) {
-  std::ofstream stat;
-  stat.open("status.txt", std::ios_base::app);
-  int r = 0;
-
   MPI_Init(&argc, &argv);
 
   MPI_Comm_size(MPI_COMM_WORLD, &proc_num);
@@ -62,16 +58,11 @@ int main(int argc, char* argv[]) {
       }
     }
   }
-  if (rank == 0) {
-    stat << "START" << std::endl;
-  }
-  for (int i = 0; i < div_size; i++)
+
+  for (int i = 0; i < n / proc_num; i++)
     MPI_Scatter(A.data + i * proc_num * n, n, MPI_DOUBLE, cols[i], n,
                 MPI_DOUBLE, 0, MPI_COMM_WORLD);
 
-  if (rank == 0) {
-    stat << "SCATTER" << std::endl;
-  }
   for (int i = 1; i < rem; i++) {
     if (rank == 0)
       MPI_Send(A.data + n * proc_num * (n / proc_num) + i * n, n, MPI_DOUBLE, i,
@@ -81,21 +72,13 @@ int main(int argc, char* argv[]) {
                MPI_STATUS_IGNORE);
   }
 
-  if (rank == 0) {
-    stat << "SND/RCV1" << std::endl;
-  }
   if (n % proc_num != 0) {
     if (rank == 0)
       MPI_Send(b, n, MPI_DOUBLE, rem, 0, MPI_COMM_WORLD);
     else if (rank == n % proc_num)
       MPI_Recv(b, n, MPI_DOUBLE, 0, 0, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
   }
-  if (rank == 0) {
-    stat << "SND/RCV2" << std::endl;
-  }
-  if (rank == 0) {
-    stat << "END" << std::endl;
-  }
+
   int nrows = A.nrows, ncols = A.ncols;
   MPI_Barrier(MPI_COMM_WORLD);
   reflection_method(n, A, cols, b, nrows, ncols, proc_num, rank, div_size);

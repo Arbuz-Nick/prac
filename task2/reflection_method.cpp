@@ -59,9 +59,6 @@ void reflection_method(const int n,
                        int proc_num,
                        int rank,
                        int div_size) {
-  std::ofstream stat;
-  stat.open("status.txt", std::ios_base::app);
-
   double* a = new double[n];
   for (int i = 0; i < n; ++i) {
     a[i] = 0;
@@ -72,10 +69,7 @@ void reflection_method(const int n,
     for (int i = 0; i < n; ++i)
       start_b[i] = 0;
   }
-  int r = 0;
-  if (rank == 0) {
-    stat << "RM: " << r++ << std::endl;
-  }
+
   double* x = new double[n];
   double* x_global = new double[n];
   for (int i = 0; i < n; ++i) {
@@ -121,9 +115,6 @@ void reflection_method(const int n,
     }
   }
 
-  if (rank == 0) {
-    stat << "RM: " << r++ << std::endl;
-  }
   MPI_Barrier(MPI_COMM_WORLD);
   double to_r_time = now();
 
@@ -156,9 +147,6 @@ void reflection_method(const int n,
     }
   }
 
-  if (rank == 0) {
-    stat << "RM: " << r++ << std::endl;
-  }
   MPI_Allreduce(x, x_global, n, MPI_DOUBLE, MPI_SUM, MPI_COMM_WORLD);
   double end_time = now();
 
@@ -175,7 +163,6 @@ void reflection_method(const int n,
   }
 
   if (rank == 0) {
-    stat << "RM: " << r++ << std::endl;
     A.T();
     double* file_x = new double[n];
     for (int j = 0; j < n; j++) {
@@ -197,7 +184,6 @@ void reflection_method(const int n,
     result.close();
     delete[](start_b);
   }
-  stat.close();
   delete[](x);
   delete[](x_global);
   delete[](a);
