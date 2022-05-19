@@ -14,13 +14,18 @@ static void generate_vector(const Matrix& A, double* b) {
 }
 
 int main(int argc, char* argv[]) {
+  std::ofstream stat;
+  stat.open("status.txt", std::ios_base::app);
+  int r = 0;
+
   MPI_Init(&argc, &argv);
 
   MPI_Comm_size(MPI_COMM_WORLD, &proc_num);
   MPI_Comm_rank(MPI_COMM_WORLD, &rank);
-  if (rank == 0)
+  if (rank == 0) {
+    stat << "main: " << r++ << std::endl;
     std::cout << "Number of proccessors: " << proc_num << std::endl;
-
+  }
   int n;
 
   if (argc > 1) {
@@ -29,6 +34,9 @@ int main(int argc, char* argv[]) {
     n = 10;
   }
 
+  if (rank == 0) {
+    stat << "main: " << r++ << std::endl;
+  }
   int div_size = n / proc_num;
   int rem = n % proc_num;
   for (int i = 0; i < rem; i++) {
@@ -58,7 +66,9 @@ int main(int argc, char* argv[]) {
       }
     }
   }
-
+  if (rank == 0) {
+    stat << "main: " << r++ << std::endl;
+  }
   for (int i = 0; i < div_size; i++)
     MPI_Scatter(A.data + i * proc_num * n, n, MPI_DOUBLE, cols[i], n,
                 MPI_DOUBLE, 0, MPI_COMM_WORLD);
@@ -78,7 +88,9 @@ int main(int argc, char* argv[]) {
     else if (rank == n % proc_num)
       MPI_Recv(b, n, MPI_DOUBLE, 0, 0, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
   }
-
+  if (rank == 0) {
+    stat << "main: " << r++ << std::endl;
+  }
   int nrows = A.nrows, ncols = A.ncols;
   MPI_Barrier(MPI_COMM_WORLD);
   reflection_method(n, A, cols, b, nrows, ncols, proc_num, rank, div_size);
@@ -88,6 +100,9 @@ int main(int argc, char* argv[]) {
       delete[](cols[i]);
     }
   delete[](cols);
+  if (rank == 0) {
+    stat << "main: " << r++ << std::endl;
+  }
   MPI_Finalize();
   return 0;
 }
