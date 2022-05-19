@@ -59,6 +59,10 @@ void reflection_method(const int n,
                        int proc_num,
                        int rank,
                        int div_size) {
+  std::ofstream stat;
+  stat.open("status.txt");
+  stat << "Step Num" << std::endl;
+
   double* a = new double[n];
   for (int i = 0; i < n; ++i) {
     a[i] = 0;
@@ -71,7 +75,7 @@ void reflection_method(const int n,
   }
   int r = 0;
   if (rank == 0) {
-    stderr << r++ << std::endl;
+    stat << r++ << std::endl;
   }
   double* x = new double[n];
   double* x_global = new double[n];
@@ -97,10 +101,6 @@ void reflection_method(const int n,
         a[j] /= a_norm;
     }
 
-    if (rank == 0) {
-      stderr << r++ << std::endl;
-    }
-
     MPI_Bcast(a, len, MPI_DOUBLE, i % proc_num, MPI_COMM_WORLD);
 
     for (int col = i / proc_num; col < div_size; col++) {
@@ -123,7 +123,7 @@ void reflection_method(const int n,
   }
 
   if (rank == 0) {
-    stderr << r++ << std::endl;
+    stat << r++ << std::endl;
   }
   MPI_Barrier(MPI_COMM_WORLD);
   double to_r_time = now();
@@ -158,7 +158,7 @@ void reflection_method(const int n,
   }
 
   if (rank == 0) {
-    std::stderr << r++ << std::endl;
+    stat << r++ << std::endl;
   }
   MPI_Allreduce(x, x_global, n, MPI_DOUBLE, MPI_SUM, MPI_COMM_WORLD);
   double end_time = now();
@@ -176,7 +176,7 @@ void reflection_method(const int n,
   }
 
   if (rank == 0) {
-    stderr << r++ << std::endl;
+    stat << r++ << std::endl;
     A.T();
     double* file_x = new double[n];
     for (int j = 0; j < n; j++) {
@@ -189,7 +189,7 @@ void reflection_method(const int n,
     std::cout << "Error: " << error(x_global, n) << std::endl;
 
     std::ofstream result;
-    result.open("result_omp_polus.csv", std::ios_base::app);
+    result.open("result_mpi_polus.csv", std::ios_base::app);
 
     result << end_time - start_time << ";" << to_r_time - start_time << ";"
            << end_time - to_r_time << ";" << proc_num << ";" << n << ";"
@@ -198,6 +198,7 @@ void reflection_method(const int n,
     result.close();
     delete[](start_b);
   }
+  stat.close();
   delete[](x);
   delete[](x_global);
   delete[](a);
