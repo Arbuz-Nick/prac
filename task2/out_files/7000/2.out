@@ -1,48 +1,50 @@
 Sender: LSF System <lsfadmin@polus-c4-ib.bmc.hpc.cs.msu.ru>
-Subject: Job 878021: <#BSUB -n 1;#BSUB -W 00:15;#BSUB -o "./out_files/7000/2.out";#BSUB -e "./err_files/7000/2.err";#BSUB -R "span[hosts=1]";OMP_NUM_THREADS=2 ./prog 7000> in cluster <MSUCluster> Done
+Subject: Job 881590: <# this file was automaticly created by mpisubmit.pl script for edu-cmc-sqi21-01 #;source /polusfs/setenv/setup.SMPI;#BSUB -n 2;#BSUB -W 00:15;#BSUB -o ./out_files/7000/2.out;#BSUB -e ./err_files/7000/2.err;OMP_NUM_THREADS=1 mpiexec ./prog 7000> in cluster <MSUCluster> Exited
 
-Job <#BSUB -n 1;#BSUB -W 00:15;#BSUB -o "./out_files/7000/2.out";#BSUB -e "./err_files/7000/2.err";#BSUB -R "span[hosts=1]";OMP_NUM_THREADS=2 ./prog 7000> was submitted from host <polus-ib.bmc.hpc.cs.msu.ru> by user <edu-cmc-sqi21-01> in cluster <MSUCluster> at Thu Apr 28 02:05:14 2022
-Job was executed on host(s) <polus-c4-ib.bmc.hpc.cs.msu.ru>, in queue <short>, as user <edu-cmc-sqi21-01> in cluster <MSUCluster> at Thu Apr 28 02:05:33 2022
+Job <# this file was automaticly created by mpisubmit.pl script for edu-cmc-sqi21-01 #;source /polusfs/setenv/setup.SMPI;#BSUB -n 2;#BSUB -W 00:15;#BSUB -o ./out_files/7000/2.out;#BSUB -e ./err_files/7000/2.err;OMP_NUM_THREADS=1 mpiexec ./prog 7000> was submitted from host <polus-ib.bmc.hpc.cs.msu.ru> by user <edu-cmc-sqi21-01> in cluster <MSUCluster> at Thu May 19 09:16:23 2022
+Job was executed on host(s) <2*polus-c4-ib.bmc.hpc.cs.msu.ru>, in queue <short>, as user <edu-cmc-sqi21-01> in cluster <MSUCluster> at Thu May 19 09:19:10 2022
 </home_edu/edu-cmc-sqi21/edu-cmc-sqi21-01> was used as the home directory.
-</home_edu/edu-cmc-sqi21/edu-cmc-sqi21-01/Prac/6_sem_prac/task1> was used as the working directory.
-Started at Thu Apr 28 02:05:33 2022
-Terminated at Thu Apr 28 02:07:53 2022
-Results reported at Thu Apr 28 02:07:53 2022
+</home_edu/edu-cmc-sqi21/edu-cmc-sqi21-01/Prac/prac/task2> was used as the working directory.
+Started at Thu May 19 09:19:10 2022
+Terminated at Thu May 19 09:34:17 2022
+Results reported at Thu May 19 09:34:17 2022
 
 Your job looked like:
 
 ------------------------------------------------------------
 # LSBATCH: User input
-#BSUB -n 1
+# this file was automaticly created by mpisubmit.pl script for edu-cmc-sqi21-01 #
+source /polusfs/setenv/setup.SMPI
+#BSUB -n 2
 #BSUB -W 00:15
-#BSUB -o "./out_files/7000/2.out"
-#BSUB -e "./err_files/7000/2.err"
-#BSUB -R "span[hosts=1]"
-OMP_NUM_THREADS=2 ./prog 7000
+#BSUB -o ./out_files/7000/2.out
+#BSUB -e ./err_files/7000/2.err
+OMP_NUM_THREADS=1 mpiexec ./prog 7000
 
 ------------------------------------------------------------
 
-Successfully completed.
+TERM_RUNLIMIT: job killed after reaching LSF run time limit.
+Exited with exit code 140.
 
 Resource usage summary:
 
-    CPU time :                                   275.95 sec.
-    Max Memory :                                 698 MB
-    Average Memory :                             361.95 MB
+    CPU time :                                   1810.00 sec.
+    Max Memory :                                 684 MB
+    Average Memory :                             662.98 MB
     Total Requested Memory :                     -
     Delta Memory :                               -
     Max Swap :                                   -
-    Max Processes :                              4
-    Max Threads :                                6
-    Run time :                                   140 sec.
-    Turnaround time :                            159 sec.
+    Max Processes :                              6
+    Max Threads :                                15
+    Run time :                                   907 sec.
+    Turnaround time :                            1074 sec.
 
 The output (if any) follows:
 
-To R Matrix time: 136.71
-Gauss time: 0.319887
-Full time: 137.03
-Residual: 1.32035e-11
+Number of proccessors: 2
+--------------------------------------------------------------------------
+mpiexec noticed that process rank 1 with PID 0 on node polus-c4-ib exited on signal 12 (User defined signal 2).
+--------------------------------------------------------------------------
 
 
 PS:
@@ -50,50 +52,159 @@ PS:
 Read file <./err_files/7000/2.err> for stderr output of this job.
 
 Sender: LSF System <lsfadmin@polus-c4-ib.bmc.hpc.cs.msu.ru>
-Subject: Job 879558: <#BSUB -n 1;#BSUB -W 00:15;#BSUB -o "./out_files/7000/2.out";#BSUB -e "./err_files/7000/2.err";#BSUB -R "span[hosts=1]";OMP_NUM_THREADS=2 ./prog 7000> in cluster <MSUCluster> Done
+Subject: Job 881614: <# this file was automaticly created by mpisubmit.pl script for edu-cmc-sqi21-01 #;source /polusfs/setenv/setup.SMPI;#BSUB -n 2;#BSUB -W 00:15;#BSUB -o ./out_files/7000/2.out;#BSUB -e ./err_files/7000/2.err;OMP_NUM_THREADS=1 mpiexec ./prog 7000> in cluster <MSUCluster> Exited
 
-Job <#BSUB -n 1;#BSUB -W 00:15;#BSUB -o "./out_files/7000/2.out";#BSUB -e "./err_files/7000/2.err";#BSUB -R "span[hosts=1]";OMP_NUM_THREADS=2 ./prog 7000> was submitted from host <polus-ib.bmc.hpc.cs.msu.ru> by user <edu-cmc-sqi21-01> in cluster <MSUCluster> at Wed May  4 21:25:06 2022
-Job was executed on host(s) <polus-c4-ib.bmc.hpc.cs.msu.ru>, in queue <short>, as user <edu-cmc-sqi21-01> in cluster <MSUCluster> at Wed May  4 21:25:49 2022
+Job <# this file was automaticly created by mpisubmit.pl script for edu-cmc-sqi21-01 #;source /polusfs/setenv/setup.SMPI;#BSUB -n 2;#BSUB -W 00:15;#BSUB -o ./out_files/7000/2.out;#BSUB -e ./err_files/7000/2.err;OMP_NUM_THREADS=1 mpiexec ./prog 7000> was submitted from host <polus-ib.bmc.hpc.cs.msu.ru> by user <edu-cmc-sqi21-01> in cluster <MSUCluster> at Thu May 19 09:16:23 2022
+Job was executed on host(s) <1*polus-c4-ib.bmc.hpc.cs.msu.ru>, in queue <short>, as user <edu-cmc-sqi21-01> in cluster <MSUCluster> at Thu May 19 09:51:13 2022
+                            <1*polus-c3-ib.bmc.hpc.cs.msu.ru>
 </home_edu/edu-cmc-sqi21/edu-cmc-sqi21-01> was used as the home directory.
-</home_edu/edu-cmc-sqi21/edu-cmc-sqi21-01/Prac/6_sem_prac/task1> was used as the working directory.
-Started at Wed May  4 21:25:49 2022
-Terminated at Wed May  4 21:28:10 2022
-Results reported at Wed May  4 21:28:10 2022
+</home_edu/edu-cmc-sqi21/edu-cmc-sqi21-01/Prac/prac/task2> was used as the working directory.
+Started at Thu May 19 09:51:13 2022
+Terminated at Thu May 19 10:06:14 2022
+Results reported at Thu May 19 10:06:14 2022
 
 Your job looked like:
 
 ------------------------------------------------------------
 # LSBATCH: User input
-#BSUB -n 1
+# this file was automaticly created by mpisubmit.pl script for edu-cmc-sqi21-01 #
+source /polusfs/setenv/setup.SMPI
+#BSUB -n 2
 #BSUB -W 00:15
-#BSUB -o "./out_files/7000/2.out"
-#BSUB -e "./err_files/7000/2.err"
-#BSUB -R "span[hosts=1]"
-OMP_NUM_THREADS=2 ./prog 7000
+#BSUB -o ./out_files/7000/2.out
+#BSUB -e ./err_files/7000/2.err
+OMP_NUM_THREADS=1 mpiexec ./prog 7000
 
 ------------------------------------------------------------
 
-Successfully completed.
+TERM_RUNLIMIT: job killed after reaching LSF run time limit.
+Exited with exit code 140.
 
 Resource usage summary:
 
-    CPU time :                                   279.99 sec.
-    Max Memory :                                 705 MB
-    Average Memory :                             362.10 MB
+    CPU time :                                   1799.00 sec.
+    Max Memory :                                 697 MB
+    Average Memory :                             676.50 MB
     Total Requested Memory :                     -
     Delta Memory :                               -
     Max Swap :                                   -
-    Max Processes :                              4
-    Max Threads :                                6
-    Run time :                                   142 sec.
-    Turnaround time :                            184 sec.
+    Max Processes :                              7
+    Max Threads :                                19
+    Run time :                                   902 sec.
+    Turnaround time :                            2991 sec.
 
 The output (if any) follows:
 
-To R Matrix time: 138.808
-Gauss time: 0.31071
-Full time: 139.119
-Residual: 1.32035e-11
+Number of proccessors: 2
+--------------------------------------------------------------------------
+mpiexec noticed that process rank 1 with PID 137233 on node polus-c3-ib exited on signal 12 (User defined signal 2).
+--------------------------------------------------------------------------
+
+
+PS:
+
+Read file <./err_files/7000/2.err> for stderr output of this job.
+
+Sender: LSF System <lsfadmin@polus-c4-ib.bmc.hpc.cs.msu.ru>
+Subject: Job 881638: <# this file was automaticly created by mpisubmit.pl script for edu-cmc-sqi21-01 #;source /polusfs/setenv/setup.SMPI;#BSUB -n 2;#BSUB -W 00:15;#BSUB -o ./out_files/7000/2.out;#BSUB -e ./err_files/7000/2.err;OMP_NUM_THREADS=1 mpiexec ./prog 7000> in cluster <MSUCluster> Exited
+
+Job <# this file was automaticly created by mpisubmit.pl script for edu-cmc-sqi21-01 #;source /polusfs/setenv/setup.SMPI;#BSUB -n 2;#BSUB -W 00:15;#BSUB -o ./out_files/7000/2.out;#BSUB -e ./err_files/7000/2.err;OMP_NUM_THREADS=1 mpiexec ./prog 7000> was submitted from host <polus-ib.bmc.hpc.cs.msu.ru> by user <edu-cmc-sqi21-01> in cluster <MSUCluster> at Thu May 19 09:16:24 2022
+Job was executed on host(s) <2*polus-c4-ib.bmc.hpc.cs.msu.ru>, in queue <short>, as user <edu-cmc-sqi21-01> in cluster <MSUCluster> at Thu May 19 10:16:23 2022
+</home_edu/edu-cmc-sqi21/edu-cmc-sqi21-01> was used as the home directory.
+</home_edu/edu-cmc-sqi21/edu-cmc-sqi21-01/Prac/prac/task2> was used as the working directory.
+Started at Thu May 19 10:16:23 2022
+Terminated at Thu May 19 10:31:24 2022
+Results reported at Thu May 19 10:31:24 2022
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+# this file was automaticly created by mpisubmit.pl script for edu-cmc-sqi21-01 #
+source /polusfs/setenv/setup.SMPI
+#BSUB -n 2
+#BSUB -W 00:15
+#BSUB -o ./out_files/7000/2.out
+#BSUB -e ./err_files/7000/2.err
+OMP_NUM_THREADS=1 mpiexec ./prog 7000
+
+------------------------------------------------------------
+
+TERM_RUNLIMIT: job killed after reaching LSF run time limit.
+Exited with exit code 140.
+
+Resource usage summary:
+
+    CPU time :                                   1799.00 sec.
+    Max Memory :                                 684 MB
+    Average Memory :                             661.96 MB
+    Total Requested Memory :                     -
+    Delta Memory :                               -
+    Max Swap :                                   -
+    Max Processes :                              6
+    Max Threads :                                15
+    Run time :                                   901 sec.
+    Turnaround time :                            4500 sec.
+
+The output (if any) follows:
+
+Number of proccessors: 2
+--------------------------------------------------------------------------
+mpiexec noticed that process rank 1 with PID 0 on node polus-c4-ib exited on signal 12 (User defined signal 2).
+--------------------------------------------------------------------------
+
+
+PS:
+
+Read file <./err_files/7000/2.err> for stderr output of this job.
+
+Sender: LSF System <lsfadmin@polus-c3-ib.bmc.hpc.cs.msu.ru>
+Subject: Job 881662: <# this file was automaticly created by mpisubmit.pl script for edu-cmc-sqi21-01 #;source /polusfs/setenv/setup.SMPI;#BSUB -n 2;#BSUB -W 00:15;#BSUB -o ./out_files/7000/2.out;#BSUB -e ./err_files/7000/2.err;OMP_NUM_THREADS=1 mpiexec ./prog 7000> in cluster <MSUCluster> Exited
+
+Job <# this file was automaticly created by mpisubmit.pl script for edu-cmc-sqi21-01 #;source /polusfs/setenv/setup.SMPI;#BSUB -n 2;#BSUB -W 00:15;#BSUB -o ./out_files/7000/2.out;#BSUB -e ./err_files/7000/2.err;OMP_NUM_THREADS=1 mpiexec ./prog 7000> was submitted from host <polus-ib.bmc.hpc.cs.msu.ru> by user <edu-cmc-sqi21-01> in cluster <MSUCluster> at Thu May 19 09:16:25 2022
+Job was executed on host(s) <2*polus-c3-ib.bmc.hpc.cs.msu.ru>, in queue <short>, as user <edu-cmc-sqi21-01> in cluster <MSUCluster> at Thu May 19 10:52:03 2022
+</home_edu/edu-cmc-sqi21/edu-cmc-sqi21-01> was used as the home directory.
+</home_edu/edu-cmc-sqi21/edu-cmc-sqi21-01/Prac/prac/task2> was used as the working directory.
+Started at Thu May 19 10:52:03 2022
+Terminated at Thu May 19 11:07:05 2022
+Results reported at Thu May 19 11:07:05 2022
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+# this file was automaticly created by mpisubmit.pl script for edu-cmc-sqi21-01 #
+source /polusfs/setenv/setup.SMPI
+#BSUB -n 2
+#BSUB -W 00:15
+#BSUB -o ./out_files/7000/2.out
+#BSUB -e ./err_files/7000/2.err
+OMP_NUM_THREADS=1 mpiexec ./prog 7000
+
+------------------------------------------------------------
+
+TERM_RUNLIMIT: job killed after reaching LSF run time limit.
+Exited with exit code 140.
+
+Resource usage summary:
+
+    CPU time :                                   1801.00 sec.
+    Max Memory :                                 684 MB
+    Average Memory :                             663.28 MB
+    Total Requested Memory :                     -
+    Delta Memory :                               -
+    Max Swap :                                   -
+    Max Processes :                              6
+    Max Threads :                                15
+    Run time :                                   902 sec.
+    Turnaround time :                            6640 sec.
+
+The output (if any) follows:
+
+Number of proccessors: 2
+--------------------------------------------------------------------------
+mpiexec noticed that process rank 1 with PID 0 on node polus-c3-ib exited on signal 12 (User defined signal 2).
+--------------------------------------------------------------------------
 
 
 PS:

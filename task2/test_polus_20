@@ -1,0 +1,10 @@
+#! /bin/bash
+
+
+for ((k = 0; k < 4; k += 1))
+do
+for ((j = 1000; j <= 10000; j += 3000))
+do
+mpisubmit.pl -p 20 --stdout ./out_files/$j/20.out --stderr ./err_files/$j/20.err ./prog -- $j
+done
+done
