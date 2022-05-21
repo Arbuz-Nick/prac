@@ -2,9 +2,10 @@
 
 
 
-for ((j = 1000 ; j <= 10000 ; j += 3000))
+for j in 1000 4000 6000
 do
-rm -rf ./$j/*.lsf
+rm -rf ./$j
+mkdir ./$j
 for ((i = 1; i <= 2; i *= 2))
 do
 echo "#BSUB -n 1

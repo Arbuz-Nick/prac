@@ -1,12 +1,13 @@
 #! /bin/bash
 
+rm -rf ./err_files
+rm -rf ./out_files
+
 mkdir ./err_files
 mkdir ./out_files
-mkdir ./lsf_files
 
-for (( i = 1000 ; i <= 16000; i += 3000))
+for i in 1000 4000 6000 
 do 
 mkdir ./err_files/$i
 mkdir ./out_files/$i
-mkdir ./lsf_files/$i
 done
