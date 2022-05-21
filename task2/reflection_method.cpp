@@ -77,7 +77,7 @@ void reflection_method(const int n,
     x_global[i] = 0;
   }
 
-  MPI_Barrier(MPI_COMM_WORLD);
+  // MPI_Barrier(MPI_COMM_WORLD);
   double start_time = now();
 
   for (int i = 0; i < nrows - 1; i++) {
@@ -150,9 +150,10 @@ void reflection_method(const int n,
   MPI_Allreduce(x, x_global, n, MPI_DOUBLE, MPI_SUM, MPI_COMM_WORLD);
   double end_time = now();
 
-  for (int i = 0; i < n / proc_num; i++)
-    MPI_Gather(cols[i], n, MPI_DOUBLE, A.data + i * proc_num * n, n, MPI_DOUBLE,
-               0, MPI_COMM_WORLD);
+  if (proc_num > 1)
+    for (int i = 0; i < n / proc_num; i++)
+      MPI_Gather(cols[i], n, MPI_DOUBLE, A.data + i * proc_num * n, n,
+                 MPI_DOUBLE, 0, MPI_COMM_WORLD);
 
   for (int i = 1; i < n % proc_num; i++) {
     if (rank == i)
