@@ -1,121 +1,13 @@
-Sender: LSF System <lsfadmin@polus-c4-ib.bmc.hpc.cs.msu.ru>
-Subject: Job 882142: <# this file was automaticly created by mpisubmit.pl script for edu-cmc-sqi21-01 #;source /polusfs/setenv/setup.SMPI;#BSUB -n 8;#BSUB -W 00:15;#BSUB -o ./out_files/6000/8.out;#BSUB -e ./err_files/6000/8.err;OMP_NUM_THREADS=1 mpiexec ./prog 6000> in cluster <MSUCluster> Done
-
-Job <# this file was automaticly created by mpisubmit.pl script for edu-cmc-sqi21-01 #;source /polusfs/setenv/setup.SMPI;#BSUB -n 8;#BSUB -W 00:15;#BSUB -o ./out_files/6000/8.out;#BSUB -e ./err_files/6000/8.err;OMP_NUM_THREADS=1 mpiexec ./prog 6000> was submitted from host <polus-ib.bmc.hpc.cs.msu.ru> by user <edu-cmc-sqi21-01> in cluster <MSUCluster> at Sat May 21 15:32:16 2022
-Job was executed on host(s) <8*polus-c4-ib.bmc.hpc.cs.msu.ru>, in queue <short>, as user <edu-cmc-sqi21-01> in cluster <MSUCluster> at Sat May 21 15:40:09 2022
-</home_edu/edu-cmc-sqi21/edu-cmc-sqi21-01> was used as the home directory.
-</home_edu/edu-cmc-sqi21/edu-cmc-sqi21-01/Prac/prac/task2> was used as the working directory.
-Started at Sat May 21 15:40:09 2022
-Terminated at Sat May 21 15:42:36 2022
-Results reported at Sat May 21 15:42:36 2022
-
-Your job looked like:
-
-------------------------------------------------------------
-# LSBATCH: User input
-# this file was automaticly created by mpisubmit.pl script for edu-cmc-sqi21-01 #
-source /polusfs/setenv/setup.SMPI
-#BSUB -n 8
-#BSUB -W 00:15
-#BSUB -o ./out_files/6000/8.out
-#BSUB -e ./err_files/6000/8.err
-OMP_NUM_THREADS=1 mpiexec ./prog 6000
-
-------------------------------------------------------------
-
-Successfully completed.
-
-Resource usage summary:
-
-    CPU time :                                   1162.67 sec.
-    Max Memory :                                 952 MB
-    Average Memory :                             910.65 MB
-    Total Requested Memory :                     -
-    Delta Memory :                               -
-    Max Swap :                                   -
-    Max Processes :                              12
-    Max Threads :                                33
-    Run time :                                   151 sec.
-    Turnaround time :                            620 sec.
-
-The output (if any) follows:
-
-Number of proccessors: 8
-To R Matrix time: 143.519
-Gauss time: 0.196623
-Full time: 143.715
-Residual: 2.88351e-10
-Error: 8.27091e-06
-
-
-PS:
-
-Read file <./err_files/6000/8.err> for stderr output of this job.
-
-Sender: LSF System <lsfadmin@polus-c4-ib.bmc.hpc.cs.msu.ru>
-Subject: Job 882160: <# this file was automaticly created by mpisubmit.pl script for edu-cmc-sqi21-01 #;source /polusfs/setenv/setup.SMPI;#BSUB -n 8;#BSUB -W 00:15;#BSUB -o ./out_files/6000/8.out;#BSUB -e ./err_files/6000/8.err;OMP_NUM_THREADS=1 mpiexec ./prog 6000> in cluster <MSUCluster> Done
-
-Job <# this file was automaticly created by mpisubmit.pl script for edu-cmc-sqi21-01 #;source /polusfs/setenv/setup.SMPI;#BSUB -n 8;#BSUB -W 00:15;#BSUB -o ./out_files/6000/8.out;#BSUB -e ./err_files/6000/8.err;OMP_NUM_THREADS=1 mpiexec ./prog 6000> was submitted from host <polus-ib.bmc.hpc.cs.msu.ru> by user <edu-cmc-sqi21-01> in cluster <MSUCluster> at Sat May 21 15:32:17 2022
-Job was executed on host(s) <8*polus-c4-ib.bmc.hpc.cs.msu.ru>, in queue <short>, as user <edu-cmc-sqi21-01> in cluster <MSUCluster> at Sat May 21 15:47:28 2022
-</home_edu/edu-cmc-sqi21/edu-cmc-sqi21-01> was used as the home directory.
-</home_edu/edu-cmc-sqi21/edu-cmc-sqi21-01/Prac/prac/task2> was used as the working directory.
-Started at Sat May 21 15:47:28 2022
-Terminated at Sat May 21 15:49:55 2022
-Results reported at Sat May 21 15:49:55 2022
-
-Your job looked like:
-
-------------------------------------------------------------
-# LSBATCH: User input
-# this file was automaticly created by mpisubmit.pl script for edu-cmc-sqi21-01 #
-source /polusfs/setenv/setup.SMPI
-#BSUB -n 8
-#BSUB -W 00:15
-#BSUB -o ./out_files/6000/8.out
-#BSUB -e ./err_files/6000/8.err
-OMP_NUM_THREADS=1 mpiexec ./prog 6000
-
-------------------------------------------------------------
-
-Successfully completed.
-
-Resource usage summary:
-
-    CPU time :                                   1162.72 sec.
-    Max Memory :                                 952 MB
-    Average Memory :                             910.65 MB
-    Total Requested Memory :                     -
-    Delta Memory :                               -
-    Max Swap :                                   -
-    Max Processes :                              12
-    Max Threads :                                33
-    Run time :                                   153 sec.
-    Turnaround time :                            1058 sec.
-
-The output (if any) follows:
-
-Number of proccessors: 8
-To R Matrix time: 143.514
-Gauss time: 0.206684
-Full time: 143.721
-Residual: 2.88351e-10
-Error: 8.27091e-06
-
-
-PS:
-
-Read file <./err_files/6000/8.err> for stderr output of this job.
-
 Sender: LSF System <lsfadmin@polus-c3-ib.bmc.hpc.cs.msu.ru>
-Subject: Job 882178: <# this file was automaticly created by mpisubmit.pl script for edu-cmc-sqi21-01 #;source /polusfs/setenv/setup.SMPI;#BSUB -n 8;#BSUB -W 00:15;#BSUB -o ./out_files/6000/8.out;#BSUB -e ./err_files/6000/8.err;OMP_NUM_THREADS=1 mpiexec ./prog 6000> in cluster <MSUCluster> Done
+Subject: Job 882394: <# this file was automaticly created by mpisubmit.pl script for edu-cmc-sqi21-01 #;source /polusfs/setenv/setup.SMPI;#BSUB -n 8;#BSUB -W 00:30;#BSUB -o ./out_files/6000/8.out;#BSUB -e ./err_files/6000/8.err;OMP_NUM_THREADS=1 mpiexec ./prog 6000> in cluster <MSUCluster> Done
 
-Job <# this file was automaticly created by mpisubmit.pl script for edu-cmc-sqi21-01 #;source /polusfs/setenv/setup.SMPI;#BSUB -n 8;#BSUB -W 00:15;#BSUB -o ./out_files/6000/8.out;#BSUB -e ./err_files/6000/8.err;OMP_NUM_THREADS=1 mpiexec ./prog 6000> was submitted from host <polus-ib.bmc.hpc.cs.msu.ru> by user <edu-cmc-sqi21-01> in cluster <MSUCluster> at Sat May 21 15:32:17 2022
-Job was executed on host(s) <8*polus-c3-ib.bmc.hpc.cs.msu.ru>, in queue <short>, as user <edu-cmc-sqi21-01> in cluster <MSUCluster> at Sat May 21 16:01:16 2022
+Job <# this file was automaticly created by mpisubmit.pl script for edu-cmc-sqi21-01 #;source /polusfs/setenv/setup.SMPI;#BSUB -n 8;#BSUB -W 00:30;#BSUB -o ./out_files/6000/8.out;#BSUB -e ./err_files/6000/8.err;OMP_NUM_THREADS=1 mpiexec ./prog 6000> was submitted from host <polus-ib.bmc.hpc.cs.msu.ru> by user <edu-cmc-sqi21-01> in cluster <MSUCluster> at Sun May 22 12:53:39 2022
+Job was executed on host(s) <8*polus-c3-ib.bmc.hpc.cs.msu.ru>, in queue <short>, as user <edu-cmc-sqi21-01> in cluster <MSUCluster> at Sun May 22 14:25:30 2022
 </home_edu/edu-cmc-sqi21/edu-cmc-sqi21-01> was used as the home directory.
 </home_edu/edu-cmc-sqi21/edu-cmc-sqi21-01/Prac/prac/task2> was used as the working directory.
-Started at Sat May 21 16:01:16 2022
-Terminated at Sat May 21 16:03:44 2022
-Results reported at Sat May 21 16:03:44 2022
+Started at Sun May 22 14:25:30 2022
+Terminated at Sun May 22 14:27:57 2022
+Results reported at Sun May 22 14:27:57 2022
 
 Your job looked like:
 
@@ -124,7 +16,7 @@ Your job looked like:
 # this file was automaticly created by mpisubmit.pl script for edu-cmc-sqi21-01 #
 source /polusfs/setenv/setup.SMPI
 #BSUB -n 8
-#BSUB -W 00:15
+#BSUB -W 00:30
 #BSUB -o ./out_files/6000/8.out
 #BSUB -e ./err_files/6000/8.err
 OMP_NUM_THREADS=1 mpiexec ./prog 6000
@@ -135,7 +27,7 @@ Successfully completed.
 
 Resource usage summary:
 
-    CPU time :                                   1162.79 sec.
+    CPU time :                                   1162.62 sec.
     Max Memory :                                 953 MB
     Average Memory :                             910.78 MB
     Total Requested Memory :                     -
@@ -143,15 +35,123 @@ Resource usage summary:
     Max Swap :                                   -
     Max Processes :                              12
     Max Threads :                                33
-    Run time :                                   147 sec.
-    Turnaround time :                            1887 sec.
+    Run time :                                   150 sec.
+    Turnaround time :                            5658 sec.
 
 The output (if any) follows:
 
 Number of proccessors: 8
-To R Matrix time: 143.53
-Gauss time: 0.202083
-Full time: 143.732
+To R Matrix time: 143.561
+Gauss time: 0.196663
+Full time: 143.758
+Residual: 2.88351e-10
+Error: 8.27091e-06
+
+
+PS:
+
+Read file <./err_files/6000/8.err> for stderr output of this job.
+
+Sender: LSF System <lsfadmin@polus-c4-ib.bmc.hpc.cs.msu.ru>
+Subject: Job 882412: <# this file was automaticly created by mpisubmit.pl script for edu-cmc-sqi21-01 #;source /polusfs/setenv/setup.SMPI;#BSUB -n 8;#BSUB -W 00:30;#BSUB -o ./out_files/6000/8.out;#BSUB -e ./err_files/6000/8.err;OMP_NUM_THREADS=1 mpiexec ./prog 6000> in cluster <MSUCluster> Done
+
+Job <# this file was automaticly created by mpisubmit.pl script for edu-cmc-sqi21-01 #;source /polusfs/setenv/setup.SMPI;#BSUB -n 8;#BSUB -W 00:30;#BSUB -o ./out_files/6000/8.out;#BSUB -e ./err_files/6000/8.err;OMP_NUM_THREADS=1 mpiexec ./prog 6000> was submitted from host <polus-ib.bmc.hpc.cs.msu.ru> by user <edu-cmc-sqi21-01> in cluster <MSUCluster> at Sun May 22 12:53:40 2022
+Job was executed on host(s) <8*polus-c4-ib.bmc.hpc.cs.msu.ru>, in queue <short>, as user <edu-cmc-sqi21-01> in cluster <MSUCluster> at Sun May 22 14:39:16 2022
+</home_edu/edu-cmc-sqi21/edu-cmc-sqi21-01> was used as the home directory.
+</home_edu/edu-cmc-sqi21/edu-cmc-sqi21-01/Prac/prac/task2> was used as the working directory.
+Started at Sun May 22 14:39:16 2022
+Terminated at Sun May 22 14:41:44 2022
+Results reported at Sun May 22 14:41:44 2022
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+# this file was automaticly created by mpisubmit.pl script for edu-cmc-sqi21-01 #
+source /polusfs/setenv/setup.SMPI
+#BSUB -n 8
+#BSUB -W 00:30
+#BSUB -o ./out_files/6000/8.out
+#BSUB -e ./err_files/6000/8.err
+OMP_NUM_THREADS=1 mpiexec ./prog 6000
+
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   1175.35 sec.
+    Max Memory :                                 952 MB
+    Average Memory :                             910.65 MB
+    Total Requested Memory :                     -
+    Delta Memory :                               -
+    Max Swap :                                   -
+    Max Processes :                              12
+    Max Threads :                                33
+    Run time :                                   148 sec.
+    Turnaround time :                            6484 sec.
+
+The output (if any) follows:
+
+Number of proccessors: 8
+To R Matrix time: 145.05
+Gauss time: 0.197868
+Full time: 145.248
+Residual: 2.88351e-10
+Error: 8.27091e-06
+
+
+PS:
+
+Read file <./err_files/6000/8.err> for stderr output of this job.
+
+Sender: LSF System <lsfadmin@polus-c4-ib.bmc.hpc.cs.msu.ru>
+Subject: Job 882430: <# this file was automaticly created by mpisubmit.pl script for edu-cmc-sqi21-01 #;source /polusfs/setenv/setup.SMPI;#BSUB -n 8;#BSUB -W 00:30;#BSUB -o ./out_files/6000/8.out;#BSUB -e ./err_files/6000/8.err;OMP_NUM_THREADS=1 mpiexec ./prog 6000> in cluster <MSUCluster> Done
+
+Job <# this file was automaticly created by mpisubmit.pl script for edu-cmc-sqi21-01 #;source /polusfs/setenv/setup.SMPI;#BSUB -n 8;#BSUB -W 00:30;#BSUB -o ./out_files/6000/8.out;#BSUB -e ./err_files/6000/8.err;OMP_NUM_THREADS=1 mpiexec ./prog 6000> was submitted from host <polus-ib.bmc.hpc.cs.msu.ru> by user <edu-cmc-sqi21-01> in cluster <MSUCluster> at Sun May 22 12:53:40 2022
+Job was executed on host(s) <8*polus-c4-ib.bmc.hpc.cs.msu.ru>, in queue <short>, as user <edu-cmc-sqi21-01> in cluster <MSUCluster> at Sun May 22 14:52:01 2022
+</home_edu/edu-cmc-sqi21/edu-cmc-sqi21-01> was used as the home directory.
+</home_edu/edu-cmc-sqi21/edu-cmc-sqi21-01/Prac/prac/task2> was used as the working directory.
+Started at Sun May 22 14:52:01 2022
+Terminated at Sun May 22 14:54:33 2022
+Results reported at Sun May 22 14:54:33 2022
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+# this file was automaticly created by mpisubmit.pl script for edu-cmc-sqi21-01 #
+source /polusfs/setenv/setup.SMPI
+#BSUB -n 8
+#BSUB -W 00:30
+#BSUB -o ./out_files/6000/8.out
+#BSUB -e ./err_files/6000/8.err
+OMP_NUM_THREADS=1 mpiexec ./prog 6000
+
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   1202.52 sec.
+    Max Memory :                                 953 MB
+    Average Memory :                             910.87 MB
+    Total Requested Memory :                     -
+    Delta Memory :                               -
+    Max Swap :                                   -
+    Max Processes :                              12
+    Max Threads :                                33
+    Run time :                                   152 sec.
+    Turnaround time :                            7253 sec.
+
+The output (if any) follows:
+
+Number of proccessors: 8
+To R Matrix time: 148.515
+Gauss time: 0.211272
+Full time: 148.726
 Residual: 2.88351e-10
 Error: 8.27091e-06
 
@@ -161,15 +161,15 @@ PS:
 Read file <./err_files/6000/8.err> for stderr output of this job.
 
 Sender: LSF System <lsfadmin@polus-c1-ib.bmc.hpc.cs.msu.ru>
-Subject: Job 882196: <# this file was automaticly created by mpisubmit.pl script for edu-cmc-sqi21-01 #;source /polusfs/setenv/setup.SMPI;#BSUB -n 8;#BSUB -W 00:15;#BSUB -o ./out_files/6000/8.out;#BSUB -e ./err_files/6000/8.err;OMP_NUM_THREADS=1 mpiexec ./prog 6000> in cluster <MSUCluster> Done
+Subject: Job 882448: <# this file was automaticly created by mpisubmit.pl script for edu-cmc-sqi21-01 #;source /polusfs/setenv/setup.SMPI;#BSUB -n 8;#BSUB -W 00:30;#BSUB -o ./out_files/6000/8.out;#BSUB -e ./err_files/6000/8.err;OMP_NUM_THREADS=1 mpiexec ./prog 6000> in cluster <MSUCluster> Done
 
-Job <# this file was automaticly created by mpisubmit.pl script for edu-cmc-sqi21-01 #;source /polusfs/setenv/setup.SMPI;#BSUB -n 8;#BSUB -W 00:15;#BSUB -o ./out_files/6000/8.out;#BSUB -e ./err_files/6000/8.err;OMP_NUM_THREADS=1 mpiexec ./prog 6000> was submitted from host <polus-ib.bmc.hpc.cs.msu.ru> by user <edu-cmc-sqi21-01> in cluster <MSUCluster> at Sat May 21 15:32:18 2022
-Job was executed on host(s) <8*polus-c1-ib.bmc.hpc.cs.msu.ru>, in queue <short>, as user <edu-cmc-sqi21-01> in cluster <MSUCluster> at Sat May 21 16:12:22 2022
+Job <# this file was automaticly created by mpisubmit.pl script for edu-cmc-sqi21-01 #;source /polusfs/setenv/setup.SMPI;#BSUB -n 8;#BSUB -W 00:30;#BSUB -o ./out_files/6000/8.out;#BSUB -e ./err_files/6000/8.err;OMP_NUM_THREADS=1 mpiexec ./prog 6000> was submitted from host <polus-ib.bmc.hpc.cs.msu.ru> by user <edu-cmc-sqi21-01> in cluster <MSUCluster> at Sun May 22 12:53:41 2022
+Job was executed on host(s) <8*polus-c1-ib.bmc.hpc.cs.msu.ru>, in queue <short>, as user <edu-cmc-sqi21-01> in cluster <MSUCluster> at Sun May 22 15:04:48 2022
 </home_edu/edu-cmc-sqi21/edu-cmc-sqi21-01> was used as the home directory.
 </home_edu/edu-cmc-sqi21/edu-cmc-sqi21-01/Prac/prac/task2> was used as the working directory.
-Started at Sat May 21 16:12:22 2022
-Terminated at Sat May 21 16:14:50 2022
-Results reported at Sat May 21 16:14:50 2022
+Started at Sun May 22 15:04:48 2022
+Terminated at Sun May 22 15:07:22 2022
+Results reported at Sun May 22 15:07:22 2022
 
 Your job looked like:
 
@@ -178,7 +178,7 @@ Your job looked like:
 # this file was automaticly created by mpisubmit.pl script for edu-cmc-sqi21-01 #
 source /polusfs/setenv/setup.SMPI
 #BSUB -n 8
-#BSUB -W 00:15
+#BSUB -W 00:30
 #BSUB -o ./out_files/6000/8.out
 #BSUB -e ./err_files/6000/8.err
 OMP_NUM_THREADS=1 mpiexec ./prog 6000
@@ -189,23 +189,23 @@ Successfully completed.
 
 Resource usage summary:
 
-    CPU time :                                   1164.25 sec.
-    Max Memory :                                 952 MB
-    Average Memory :                             910.65 MB
+    CPU time :                                   1207.66 sec.
+    Max Memory :                                 953 MB
+    Average Memory :                             910.87 MB
     Total Requested Memory :                     -
     Delta Memory :                               -
     Max Swap :                                   -
     Max Processes :                              12
     Max Threads :                                33
-    Run time :                                   149 sec.
-    Turnaround time :                            2552 sec.
+    Run time :                                   153 sec.
+    Turnaround time :                            8021 sec.
 
 The output (if any) follows:
 
 Number of proccessors: 8
-To R Matrix time: 143.716
-Gauss time: 0.1976
-Full time: 143.913
+To R Matrix time: 149.067
+Gauss time: 0.219304
+Full time: 149.287
 Residual: 2.88351e-10
 Error: 8.27091e-06
 
