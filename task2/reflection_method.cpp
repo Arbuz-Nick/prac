@@ -32,9 +32,7 @@ double residual(const Matrix& A, double* x, double* b) {
   for (int i = 0; i < A.nrows; i++) {
     for (int j = 0; j < A.ncols; j++) {
       Ax[i] += A.data[i * A.ncols + j] * x[j];
-      // std::cout << x[j] << " ";
     }
-    // std::cout << std::endl;
   }
 
   std::vector<double> res(A.nrows, 0.0);
@@ -77,7 +75,6 @@ void reflection_method(const int n,
     x_global[i] = 0;
   }
 
-  // MPI_Barrier(MPI_COMM_WORLD);
   double start_time = now();
 
   for (int i = 0; i < nrows - 1; i++) {
@@ -135,13 +132,11 @@ void reflection_method(const int n,
         MPI_Recv(b, n, MPI_DOUBLE, (i + 1) % proc_num, 0, MPI_COMM_WORLD,
                  MPI_STATUS_IGNORE);
       x[i] = b[i] / cols[i / proc_num][i];
-      // std::cout << b[i] << std::endl;
       for (int j = 0; j <= i; j++) {
         b[j] -= x[i] * cols[i / proc_num][j];
       }
     } else if (rank == (i + 1) % proc_num) {
       if (proc_num > 1) {
-        // std::cout << b[i] << std::endl;
         MPI_Send(b, n, MPI_DOUBLE, i % proc_num, 0, MPI_COMM_WORLD);
       }
     }
@@ -165,23 +160,21 @@ void reflection_method(const int n,
 
   if (rank == 0) {
     A.T();
-    double* file_x = new double[n];
-    for (int j = 0; j < n; j++) {
-      file_x[j] = x_global[j];
-    }
+    double resid = residual(A, x_global, start_b);
+    double err = error(x_global, n);
+
     std::cout << "To R Matrix time: " << to_r_time - start_time << std::endl;
     std::cout << "Gauss time: " << end_time - to_r_time << std::endl;
     std::cout << "Full time: " << end_time - start_time << std::endl;
-    std::cout << "Residual: " << residual(A, x_global, start_b) << std::endl;
-    std::cout << "Error: " << error(x_global, n) << std::endl;
+    std::cout << "Residual: " << resid << std::endl;
+    std::cout << "Error: " << err << std::endl;
 
     std::ofstream result;
     result.open("result_mpi_polus.csv", std::ios_base::app);
 
     result << end_time - start_time << ";" << to_r_time - start_time << ";"
            << end_time - to_r_time << ";" << proc_num << ";" << n << ";"
-           << residual(A, file_x, start_b) << ";" << error(file_x, n)
-           << std::endl;
+           << resid << ";" << err << std::endl;
     result.close();
     delete[](start_b);
   }
