@@ -9,7 +9,7 @@ for j in 1000 4000 6000
 do
 for ((i = 1; i <= 32; i *= 2))
 do
-mpisubmit.pl -p $i --stdout ./out_files/$j/$i.out --stderr ./err_files/$j/$i.err ./prog -- $j
+mpisubmit.pl -p $i -w 00:30 --stdout ./out_files/$j/$i.out --stderr ./err_files/$j/$i.err ./prog -- $j
 done
 done
 done
