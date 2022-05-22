@@ -112,7 +112,6 @@ void reflection_method(const int n,
     }
   }
 
-  MPI_Barrier(MPI_COMM_WORLD);
   double to_r_time = now();
 
   if (n % proc_num != 0) {
