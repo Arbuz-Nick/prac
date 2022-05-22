@@ -58,9 +58,7 @@ void reflection_method(const int n,
                        int rank,
                        int div_size) {
   double* a = new double[n];
-  for (int i = 0; i < n; ++i) {
-    a[i] = 0;
-  }
+
   double* start_b = nullptr;
   if (rank == 0) {
     start_b = new double[n];
@@ -70,10 +68,6 @@ void reflection_method(const int n,
 
   double* x = new double[n];
   double* x_global = new double[n];
-  for (int i = 0; i < n; ++i) {
-    x[i] = 0;
-    x_global[i] = 0;
-  }
 
   double start_time = now();
 
