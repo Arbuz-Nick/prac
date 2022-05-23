@@ -69,13 +69,15 @@ void reflection_method(const int n,
   double* x = new double[n];
   double* x_global = new double[n];
 
+  MPI_Barrier(MPI_COMM_WORLD);
   double start_time = now();
 
   for (int i = 0; i < nrows - 1; i++) {
     int len = nrows - i;
+    int i_proc = i / proc_num;
     if (rank == i % proc_num) {
       for (int j = i; j < nrows; j++)
-        a[j - i] = cols[i / proc_num][j];
+        a[j - i] = cols[i_proc][j];
 
       double a_norm = norm(a, len);
       a[0] -= sgn(a[0]) * a_norm;
@@ -87,11 +89,12 @@ void reflection_method(const int n,
 
     MPI_Bcast(a, len, MPI_DOUBLE, i % proc_num, MPI_COMM_WORLD);
 
-    for (int col = i / proc_num; col < div_size; col++) {
+    for (int col = i_proc; col < div_size; col++) {
       if (col * proc_num + rank >= i) {
         double sum = 0.0;
         for (int k = 0; k < len; k++)
-          sum += 2.0 * a[k] * cols[col][i + k];
+          sum += (double)a[k] * cols[col][i + k];
+        sum *= 2.0;
         for (int k = 0; k < len; k++)
           cols[col][i + k] -= sum * a[k];
       }
@@ -100,12 +103,14 @@ void reflection_method(const int n,
     if (rank == n % proc_num) {
       double sum = 0.0;
       for (int j = 0; j < len; j++)
-        sum += 2.0 * a[j] * b[j + i];
+        sum += (double)a[j] * b[j + i];
+      sum *= 2.0;
       for (int j = 0; j < len; j++)
         b[j + i] -= sum * a[j];
     }
   }
 
+  MPI_Barrier(MPI_COMM_WORLD);
   double to_r_time = now();
 
   if (n % proc_num != 0) {
@@ -120,13 +125,14 @@ void reflection_method(const int n,
       start_b[i] = b[i];
   }
   for (int i = n - 1; i >= 0; i--) {
+    int i_proc = i / proc_num;
     if (rank == i % proc_num) {
       if (proc_num > 1)
         MPI_Recv(b, n, MPI_DOUBLE, (i + 1) % proc_num, 0, MPI_COMM_WORLD,
                  MPI_STATUS_IGNORE);
-      x[i] = b[i] / cols[i / proc_num][i];
+      x[i] = b[i] / cols[i_proc][i];
       for (int j = 0; j <= i; j++) {
-        b[j] -= x[i] * cols[i / proc_num][j];
+        b[j] -= x[i] * cols[i_proc][j];
       }
     } else if (rank == (i + 1) % proc_num) {
       if (proc_num > 1) {
