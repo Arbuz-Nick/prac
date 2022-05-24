@@ -5,9 +5,9 @@
 std::vector<double> generate_vector(const Matrix& A) {
   std::vector<double> b(A.nrows, 0.0);
 
-  for (uint32_t i = 0; i < A.nrows; i++) {
+  for (unsigned int i = 0; i < A.nrows; i++) {
     double sum = 0.0;
-    for (uint32_t j = 0; j < A.row_size; j++)
+    for (unsigned int j = 0; j < A.row_size; j++)
       sum += A.val[i * A.row_size + j];
     b[i] = sum;
   }

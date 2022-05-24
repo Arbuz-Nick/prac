@@ -3,39 +3,22 @@
 double now() {
   return omp_get_wtime();
 }
-/*
-double norm(const std::vector<double>& vec, int size) {
-  double res = 0;
-  for (int i = 0; i < size; i++) {
-    res += vec[i] * vec[i];
-  }
-  return std::sqrt(res);
-}
-*/
+
 double norm(const std::vector<double>& vec) {
   double res = 0.0;
   for (const auto& it : vec)
     res += it * it;
   return std::sqrt(res);
 }
-/*
-double sgn(double num) {
-  if (num < 0)
-    return (-1.0);
-  else if (num > 0)
-    return (1.0);
-  return 0.0;
-}
-*/
+
 void spmv(const Matrix& A,
           const std::vector<double>& x,
           std::vector<double>& b) {
   auto nthreads = omp_get_max_threads();
   omp_set_num_threads(nthreads);
 
-  uint32_t nrows = A.nrows;
-  uint32_t ncols = A.ncols;
-  uint32_t width = A.row_size;
+  unsigned int nrows = A.nrows;
+  unsigned int width = A.row_size;
 #pragma omp parallel for
   for (int i = 0; i < nrows; i++) {
     b[i] = 0.0;
@@ -90,7 +73,7 @@ double error(std::vector<double> x) {
 
 void set(std::vector<double>& x, double value) {
 #pragma omp parallel for
-  for (uint32_t i = 0; i < x.size(); i++)
+  for (unsigned int i = 0; i < x.size(); i++)
     x[i] = value;
 }
 
@@ -149,8 +132,8 @@ void CG(const int size,
     full_time += local_time;
   }
   double res = residual(A, x, b);
-  std::cout << "Iter Num: " << k << std::endl;
   double err = error(x);
+  std::cout << "Iter Num: " << k << std::endl;
   std::cout << "Full time: " << full_time << std::endl;
   std::cout << "Avg time: " << full_time / run_iters << std::endl;
   std::cout << "Residual: " << norm(r) << std::endl;

@@ -1,25 +1,22 @@
 #pragma once
 
-#include <vector>
 #include <cstdint>
+#include <vector>
 
 struct Matrix {
-public:
+ public:
+  std::vector<double> val;
+  std::vector<int> col;
 
-    std::vector<double> val;
-    std::vector<int> col;
+  bool is_empty = true;
+  int size = 0;
+  int nrows, ncols = 0;
+  int row_size = 7;
 
-    bool is_empty = true;
-    int size = 0;
-    int nrows, ncols = 0;
-    int row_size = 7;
-    
-    Matrix(int _size) {
-        nrows = _size;
-        ncols = _size;
-    }
+  Matrix(int _size) {
+    nrows = _size;
+    ncols = _size;
+  }
 
-    void print() const;
-    void generate(int);
-    std::vector<double> get_diag() const;
+  void generate(int);
 };
