@@ -1,0 +1,51 @@
+Sender: LSF System <lsfadmin@polus-c4-ib.bmc.hpc.cs.msu.ru>
+Subject: Job 878026: <#BSUB -W 00:15;#BSUB -o "./out_files/7000/64.out";#BSUB -e "./err_files/7000/64.err";#BSUB -R "affinity[core(9)]";OMP_NUM_THREADS=64;/polusfs/lsf/openmp/launchOpenMP.py ./prog 7000> in cluster <MSUCluster> Done
+
+Job <#BSUB -W 00:15;#BSUB -o "./out_files/7000/64.out";#BSUB -e "./err_files/7000/64.err";#BSUB -R "affinity[core(9)]";OMP_NUM_THREADS=64;/polusfs/lsf/openmp/launchOpenMP.py ./prog 7000> was submitted from host <polus-ib.bmc.hpc.cs.msu.ru> by user <edu-cmc-sqi21-01> in cluster <MSUCluster> at Thu Apr 28 02:05:19 2022
+Job was executed on host(s) <polus-c4-ib.bmc.hpc.cs.msu.ru>, in queue <short>, as user <edu-cmc-sqi21-01> in cluster <MSUCluster> at Thu Apr 28 02:43:27 2022
+</home_edu/edu-cmc-sqi21/edu-cmc-sqi21-01> was used as the home directory.
+</home_edu/edu-cmc-sqi21/edu-cmc-sqi21-01/Prac/6_sem_prac/task1> was used as the working directory.
+Started at Thu Apr 28 02:43:27 2022
+Terminated at Thu Apr 28 02:43:57 2022
+Results reported at Thu Apr 28 02:43:57 2022
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#BSUB -W 00:15
+#BSUB -o "./out_files/7000/64.out"
+#BSUB -e "./err_files/7000/64.err"
+#BSUB -R "affinity[core(9)]"
+OMP_NUM_THREADS=64
+/polusfs/lsf/openmp/launchOpenMP.py ./prog 7000
+
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   1711.11 sec.
+    Max Memory :                                 694 MB
+    Average Memory :                             323.50 MB
+    Total Requested Memory :                     -
+    Delta Memory :                               -
+    Max Swap :                                   -
+    Max Processes :                              4
+    Max Threads :                                68
+    Run time :                                   30 sec.
+    Turnaround time :                            2318 sec.
+
+The output (if any) follows:
+
+To R Matrix time: 25.0377
+Gauss time: 0.657161
+Full time: 25.6949
+Residual: 1.32035e-11
+
+
+PS:
+
+Read file <./err_files/7000/64.err> for stderr output of this job.
+

@@ -1,0 +1,6 @@
+#BSUB -W 00:15
+#BSUB -o "./out_files/300/8.out"
+#BSUB -e "./err_files/300/8.err"
+#BSUB -R "affinity[core(4)]"
+OMP_NUM_THREADS=8
+/polusfs/lsf/openmp/launchOpenMP.py ./prog 300

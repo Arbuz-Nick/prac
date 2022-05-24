@@ -1,0 +1,102 @@
+Sender: LSF System <lsfadmin@polus-c1-ib.bmc.hpc.cs.msu.ru>
+Subject: Job 878025: <#BSUB -W 00:15;#BSUB -o "./out_files/7000/32.out";#BSUB -e "./err_files/7000/32.err";#BSUB -R "affinity[core(5)]";OMP_NUM_THREADS=32;/polusfs/lsf/openmp/launchOpenMP.py ./prog 7000> in cluster <MSUCluster> Done
+
+Job <#BSUB -W 00:15;#BSUB -o "./out_files/7000/32.out";#BSUB -e "./err_files/7000/32.err";#BSUB -R "affinity[core(5)]";OMP_NUM_THREADS=32;/polusfs/lsf/openmp/launchOpenMP.py ./prog 7000> was submitted from host <polus-ib.bmc.hpc.cs.msu.ru> by user <edu-cmc-sqi21-01> in cluster <MSUCluster> at Thu Apr 28 02:05:18 2022
+Job was executed on host(s) <polus-c1-ib.bmc.hpc.cs.msu.ru>, in queue <short>, as user <edu-cmc-sqi21-01> in cluster <MSUCluster> at Thu Apr 28 02:43:05 2022
+</home_edu/edu-cmc-sqi21/edu-cmc-sqi21-01> was used as the home directory.
+</home_edu/edu-cmc-sqi21/edu-cmc-sqi21-01/Prac/6_sem_prac/task1> was used as the working directory.
+Started at Thu Apr 28 02:43:05 2022
+Terminated at Thu Apr 28 02:43:40 2022
+Results reported at Thu Apr 28 02:43:40 2022
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#BSUB -W 00:15
+#BSUB -o "./out_files/7000/32.out"
+#BSUB -e "./err_files/7000/32.err"
+#BSUB -R "affinity[core(5)]"
+OMP_NUM_THREADS=32
+/polusfs/lsf/openmp/launchOpenMP.py ./prog 7000
+
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   1069.44 sec.
+    Max Memory :                                 701 MB
+    Average Memory :                             329.29 MB
+    Total Requested Memory :                     -
+    Delta Memory :                               -
+    Max Swap :                                   -
+    Max Processes :                              4
+    Max Threads :                                36
+    Run time :                                   35 sec.
+    Turnaround time :                            2302 sec.
+
+The output (if any) follows:
+
+To R Matrix time: 32.0302
+Gauss time: 0.571131
+Full time: 32.6013
+Residual: 1.32035e-11
+
+
+PS:
+
+Read file <./err_files/7000/32.err> for stderr output of this job.
+
+Sender: LSF System <lsfadmin@polus-c4-ib.bmc.hpc.cs.msu.ru>
+Subject: Job 879562: <#BSUB -W 00:15;#BSUB -o "./out_files/7000/32.out";#BSUB -e "./err_files/7000/32.err";#BSUB -R "affinity[core(16)]";OMP_NUM_THREADS=32;/polusfs/lsf/openmp/launchOpenMP.py ./prog 7000> in cluster <MSUCluster> Done
+
+Job <#BSUB -W 00:15;#BSUB -o "./out_files/7000/32.out";#BSUB -e "./err_files/7000/32.err";#BSUB -R "affinity[core(16)]";OMP_NUM_THREADS=32;/polusfs/lsf/openmp/launchOpenMP.py ./prog 7000> was submitted from host <polus-ib.bmc.hpc.cs.msu.ru> by user <edu-cmc-sqi21-01> in cluster <MSUCluster> at Wed May  4 21:25:10 2022
+Job was executed on host(s) <polus-c4-ib.bmc.hpc.cs.msu.ru>, in queue <short>, as user <edu-cmc-sqi21-01> in cluster <MSUCluster> at Wed May  4 21:30:47 2022
+</home_edu/edu-cmc-sqi21/edu-cmc-sqi21-01> was used as the home directory.
+</home_edu/edu-cmc-sqi21/edu-cmc-sqi21-01/Prac/6_sem_prac/task1> was used as the working directory.
+Started at Wed May  4 21:30:47 2022
+Terminated at Wed May  4 21:31:11 2022
+Results reported at Wed May  4 21:31:11 2022
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#BSUB -W 00:15
+#BSUB -o "./out_files/7000/32.out"
+#BSUB -e "./err_files/7000/32.err"
+#BSUB -R "affinity[core(16)]"
+OMP_NUM_THREADS=32
+/polusfs/lsf/openmp/launchOpenMP.py ./prog 7000
+
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   685.54 sec.
+    Max Memory :                                 677 MB
+    Average Memory :                             320.17 MB
+    Total Requested Memory :                     -
+    Delta Memory :                               -
+    Max Swap :                                   -
+    Max Processes :                              4
+    Max Threads :                                36
+    Run time :                                   24 sec.
+    Turnaround time :                            361 sec.
+
+The output (if any) follows:
+
+To R Matrix time: 20.548
+Gauss time: 0.585798
+Full time: 21.1338
+Residual: 1.32035e-11
+
+
+PS:
+
+Read file <./err_files/7000/32.err> for stderr output of this job.
+
