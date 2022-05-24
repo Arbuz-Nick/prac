@@ -11,7 +11,6 @@ rm -rf ./err_files/300/*.err
 echo "MatrixSize;Nthreads;Time;Residual;Error">result_omp_polus.csv
 
 ./make_dirs
-./lsf_files/make_lsf
 
 make omp_polus
 for ((k = 0; k < 4; k += 1))

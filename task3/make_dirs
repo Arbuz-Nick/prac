@@ -6,7 +6,7 @@ rm -rf ./out_files
 mkdir ./err_files
 mkdir ./out_files
 
-for i in 1000 4000 6000 
+for i in 100 200 300 
 do 
 mkdir ./err_files/$i
 mkdir ./out_files/$i
