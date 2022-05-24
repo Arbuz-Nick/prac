@@ -1,13 +1,13 @@
 Sender: LSF System <lsfadmin@polus-c1-ib.bmc.hpc.cs.msu.ru>
-Subject: Job 884162: <#BSUB -W 00:15;#BSUB -o "./out_files/100/8.out";#BSUB -e "./err_files/100/8.err";#BSUB -R "affinity[core(4)]";OMP_NUM_THREADS=8;/polusfs/lsf/openmp/launchOpenMP.py ./prog 100> in cluster <MSUCluster> Exited
+Subject: Job 884234: <#BSUB -W 00:15;#BSUB -o "./out_files/100/8.out";#BSUB -e "./err_files/100/8.err";#BSUB -R "affinity[core(4)]";OMP_NUM_THREADS=8;/polusfs/lsf/openmp/launchOpenMP.py ./prog 100> in cluster <MSUCluster> Exited
 
-Job <#BSUB -W 00:15;#BSUB -o "./out_files/100/8.out";#BSUB -e "./err_files/100/8.err";#BSUB -R "affinity[core(4)]";OMP_NUM_THREADS=8;/polusfs/lsf/openmp/launchOpenMP.py ./prog 100> was submitted from host <polus-ib.bmc.hpc.cs.msu.ru> by user <edu-cmc-sqi21-01> in cluster <MSUCluster> at Wed May 25 02:39:58 2022
-Job was executed on host(s) <polus-c1-ib.bmc.hpc.cs.msu.ru>, in queue <short>, as user <edu-cmc-sqi21-01> in cluster <MSUCluster> at Wed May 25 02:39:59 2022
+Job <#BSUB -W 00:15;#BSUB -o "./out_files/100/8.out";#BSUB -e "./err_files/100/8.err";#BSUB -R "affinity[core(4)]";OMP_NUM_THREADS=8;/polusfs/lsf/openmp/launchOpenMP.py ./prog 100> was submitted from host <polus-ib.bmc.hpc.cs.msu.ru> by user <edu-cmc-sqi21-01> in cluster <MSUCluster> at Wed May 25 02:44:25 2022
+Job was executed on host(s) <polus-c1-ib.bmc.hpc.cs.msu.ru>, in queue <short>, as user <edu-cmc-sqi21-01> in cluster <MSUCluster> at Wed May 25 02:44:27 2022
 </home_edu/edu-cmc-sqi21/edu-cmc-sqi21-01> was used as the home directory.
 </home_edu/edu-cmc-sqi21/edu-cmc-sqi21-01/Prac/prac/task3> was used as the working directory.
-Started at Wed May 25 02:39:59 2022
-Terminated at Wed May 25 02:40:01 2022
-Results reported at Wed May 25 02:40:01 2022
+Started at Wed May 25 02:44:27 2022
+Terminated at Wed May 25 02:44:31 2022
+Results reported at Wed May 25 02:44:31 2022
 
 Your job looked like:
 
@@ -22,24 +22,26 @@ OMP_NUM_THREADS=8
 
 ------------------------------------------------------------
 
-Exited with exit code 1.
+TERM_OWNER: job killed by owner.
+Exited with exit code 130.
 
 Resource usage summary:
 
-    CPU time :                                   0.03 sec.
-    Max Memory :                                 8 MB
-    Average Memory :                             6.33 MB
+    CPU time :                                   12.23 sec.
+    Max Memory :                                 132 MB
+    Average Memory :                             88.33 MB
     Total Requested Memory :                     -
     Delta Memory :                               -
     Max Swap :                                   -
     Max Processes :                              4
-    Max Threads :                                5
-    Run time :                                   2 sec.
-    Turnaround time :                            3 sec.
+    Max Threads :                                12
+    Run time :                                   5 sec.
+    Turnaround time :                            6 sec.
 
 The output (if any) follows:
 
-['/polusfs/lsf/openmp/launchOpenMP.py', './prog', '100']
+Generation started
+Generation time: 0.428188
 
 
 PS:

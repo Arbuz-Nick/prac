@@ -1,8 +1,0 @@
-Traceback (most recent call last):
-  File "/polusfs/lsf/openmp/launchOpenMP.py", line 44, in <module>
-    execvp(argv_mod[0], argv_mod)
-  File "/usr/lib64/python2.7/os.py", line 344, in execvp
-    _execvpe(file, args)
-  File "/usr/lib64/python2.7/os.py", line 368, in _execvpe
-    func(file, *argrest)
-OSError: [Errno 13] Permission denied
