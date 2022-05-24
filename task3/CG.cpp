@@ -105,7 +105,7 @@ void CG(const int size,
   std::vector<double> q(size, 0.0);
   std::vector<double> z(size, 0.0);
 
-  double ro = 0.0, ro_prev = 1.0, scalar1, scalar2, scalar3;
+  double ro = 0.0, ro_prev = 1.0;
   double betta = 1.0, alpha = 1.0;
 
   int k;
@@ -120,8 +120,6 @@ void CG(const int size,
     r = b;
     set(x, 0.0);
     k = 1;
-    z = r;
-    p = z;
     do {
       ro = dot(r, r);
 

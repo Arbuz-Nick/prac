@@ -16,7 +16,7 @@ std::vector<double> generate_vector(const Matrix& A) {
 }
 
 int main(int argc, char const* argv[]) {
-  int n = 10, max_iter = 50, run_iter = 50;
+  int n = 10, max_iter = 100, run_iter = 50;
 
   if (argc > 1)
     sscanf(argv[1], "%d", &n);
