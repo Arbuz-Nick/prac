@@ -92,7 +92,8 @@ void CG(const int size,
   double betta = 1.0, alpha = 1.0;
 
   int k;
-  double local_time, full_time = 0.0;
+  double local_time, full_time = 0.0, dot_start, spmv_start, lin_start,
+                     full_dot = 0.0, full_spmv = 0.0, full_lin = 0.0;
 
   bool convergence;
 
@@ -104,20 +105,35 @@ void CG(const int size,
     set(x, 0.0);
     k = 1;
     do {
+      dot_start = now();
       ro = dot(r, r);
-
+      full_dot += now() - dot_start;
       if (k == 1) {
         p = r;
       } else {
         betta = ro / ro_prev;
+        lin_start = now();
         lin_comb(betta, p, 1.0, r);
       }
 
+      spmv_start = now();
       spmv(A, p, q);
-      alpha = ro / dot(p, q);
+      full_spmv = now() - spmv_start;
 
+      dot_start = now();
+      double p2q = dot(p, q);
+      full_dot += now() - dot_start;
+
+      alpha = ro / p2q;
+
+      lin_start = now();
       lin_comb(1.0, x, alpha, p);
+      full_lin += now() - lin_start;
+
+      lin_start = now();
       lin_comb(1.0, r, -alpha, q);
+      full_lin += now() - lin_start;
+
       if (norm(r) < 1e-12 || k >= max_solver_iters)
         convergence = true;
       else {
@@ -136,6 +152,10 @@ void CG(const int size,
   std::cout << "Iter Num: " << k << std::endl;
   std::cout << "Full time: " << full_time << std::endl;
   std::cout << "Avg time: " << full_time / run_iters << std::endl;
+  std::cout << "Avg spmv time: " << full_spmv / run_iters << std::endl;
+  std::cout << "Avg dot time: " << full_dot / (2 * run_iters) << std::endl;
+  std::cout << "Avg lin comb time: " << full_lin / (2 * run_iters) << std::endl;
+
   std::cout << "Residual: " << norm(r) << std::endl;
   std::cout << "||Ax-b|| = " << res << std::endl;
   std::cout << "Error: " << err << std::endl;
