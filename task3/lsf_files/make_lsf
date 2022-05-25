@@ -2,7 +2,7 @@
 
 
 
-for j in 100 200 300
+for j in 100 200 250
 do
 rm -rf ./$j
 mkdir ./$j

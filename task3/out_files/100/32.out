@@ -1,0 +1,220 @@
+Sender: LSF System <lsfadmin@polus-c3-ib.bmc.hpc.cs.msu.ru>
+Subject: Job 884308: <#BSUB -W 00:15;#BSUB -o "./out_files/100/32.out";#BSUB -e "./err_files/100/32.err";#BSUB -R "affinity[core(16)]";OMP_NUM_THREADS=32;/polusfs/lsf/openmp/launchOpenMP.py ./prog 100> in cluster <MSUCluster> Done
+
+Job <#BSUB -W 00:15;#BSUB -o "./out_files/100/32.out";#BSUB -e "./err_files/100/32.err";#BSUB -R "affinity[core(16)]";OMP_NUM_THREADS=32;/polusfs/lsf/openmp/launchOpenMP.py ./prog 100> was submitted from host <polus-ib.bmc.hpc.cs.msu.ru> by user <edu-cmc-sqi21-01> in cluster <MSUCluster> at Wed May 25 02:50:37 2022
+Job was executed on host(s) <polus-c3-ib.bmc.hpc.cs.msu.ru>, in queue <short>, as user <edu-cmc-sqi21-01> in cluster <MSUCluster> at Wed May 25 03:26:05 2022
+</home_edu/edu-cmc-sqi21/edu-cmc-sqi21-01> was used as the home directory.
+</home_edu/edu-cmc-sqi21/edu-cmc-sqi21-01/Prac/prac/task3> was used as the working directory.
+Started at Wed May 25 03:26:05 2022
+Terminated at Wed May 25 03:26:19 2022
+Results reported at Wed May 25 03:26:19 2022
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#BSUB -W 00:15
+#BSUB -o "./out_files/100/32.out"
+#BSUB -e "./err_files/100/32.err"
+#BSUB -R "affinity[core(16)]"
+OMP_NUM_THREADS=32
+/polusfs/lsf/openmp/launchOpenMP.py ./prog 100
+
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   302.50 sec.
+    Max Memory :                                 135 MB
+    Average Memory :                             101.50 MB
+    Total Requested Memory :                     -
+    Delta Memory :                               -
+    Max Swap :                                   -
+    Max Processes :                              4
+    Max Threads :                                36
+    Run time :                                   20 sec.
+    Turnaround time :                            2142 sec.
+
+The output (if any) follows:
+
+Generation started
+Generation time: 0.410985
+Iter Num: 94
+Full time: 13.3893
+Avg time: 0.267785
+Residual: 7.00056e-13
+||Ax-b|| = 3.16144e-12
+Error: 8.18506e-13
+
+
+PS:
+
+Read file <./err_files/100/32.err> for stderr output of this job.
+
+Sender: LSF System <lsfadmin@polus-c3-ib.bmc.hpc.cs.msu.ru>
+Subject: Job 884326: <#BSUB -W 00:15;#BSUB -o "./out_files/100/32.out";#BSUB -e "./err_files/100/32.err";#BSUB -R "affinity[core(16)]";OMP_NUM_THREADS=32;/polusfs/lsf/openmp/launchOpenMP.py ./prog 100> in cluster <MSUCluster> Done
+
+Job <#BSUB -W 00:15;#BSUB -o "./out_files/100/32.out";#BSUB -e "./err_files/100/32.err";#BSUB -R "affinity[core(16)]";OMP_NUM_THREADS=32;/polusfs/lsf/openmp/launchOpenMP.py ./prog 100> was submitted from host <polus-ib.bmc.hpc.cs.msu.ru> by user <edu-cmc-sqi21-01> in cluster <MSUCluster> at Wed May 25 02:50:37 2022
+Job was executed on host(s) <polus-c3-ib.bmc.hpc.cs.msu.ru>, in queue <short>, as user <edu-cmc-sqi21-01> in cluster <MSUCluster> at Wed May 25 03:36:18 2022
+</home_edu/edu-cmc-sqi21/edu-cmc-sqi21-01> was used as the home directory.
+</home_edu/edu-cmc-sqi21/edu-cmc-sqi21-01/Prac/prac/task3> was used as the working directory.
+Started at Wed May 25 03:36:18 2022
+Terminated at Wed May 25 03:36:32 2022
+Results reported at Wed May 25 03:36:32 2022
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#BSUB -W 00:15
+#BSUB -o "./out_files/100/32.out"
+#BSUB -e "./err_files/100/32.err"
+#BSUB -R "affinity[core(16)]"
+OMP_NUM_THREADS=32
+/polusfs/lsf/openmp/launchOpenMP.py ./prog 100
+
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   304.06 sec.
+    Max Memory :                                 136 MB
+    Average Memory :                             103.00 MB
+    Total Requested Memory :                     -
+    Delta Memory :                               -
+    Max Swap :                                   -
+    Max Processes :                              4
+    Max Threads :                                36
+    Run time :                                   14 sec.
+    Turnaround time :                            2755 sec.
+
+The output (if any) follows:
+
+Generation started
+Generation time: 0.411554
+Iter Num: 94
+Full time: 13.4353
+Avg time: 0.268707
+Residual: 7.00056e-13
+||Ax-b|| = 3.16144e-12
+Error: 8.18506e-13
+
+
+PS:
+
+Read file <./err_files/100/32.err> for stderr output of this job.
+
+Sender: LSF System <lsfadmin@polus-c3-ib.bmc.hpc.cs.msu.ru>
+Subject: Job 884344: <#BSUB -W 00:15;#BSUB -o "./out_files/100/32.out";#BSUB -e "./err_files/100/32.err";#BSUB -R "affinity[core(16)]";OMP_NUM_THREADS=32;/polusfs/lsf/openmp/launchOpenMP.py ./prog 100> in cluster <MSUCluster> Done
+
+Job <#BSUB -W 00:15;#BSUB -o "./out_files/100/32.out";#BSUB -e "./err_files/100/32.err";#BSUB -R "affinity[core(16)]";OMP_NUM_THREADS=32;/polusfs/lsf/openmp/launchOpenMP.py ./prog 100> was submitted from host <polus-ib.bmc.hpc.cs.msu.ru> by user <edu-cmc-sqi21-01> in cluster <MSUCluster> at Wed May 25 02:50:37 2022
+Job was executed on host(s) <polus-c3-ib.bmc.hpc.cs.msu.ru>, in queue <short>, as user <edu-cmc-sqi21-01> in cluster <MSUCluster> at Wed May 25 03:46:29 2022
+</home_edu/edu-cmc-sqi21/edu-cmc-sqi21-01> was used as the home directory.
+</home_edu/edu-cmc-sqi21/edu-cmc-sqi21-01/Prac/prac/task3> was used as the working directory.
+Started at Wed May 25 03:46:29 2022
+Terminated at Wed May 25 03:46:43 2022
+Results reported at Wed May 25 03:46:43 2022
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#BSUB -W 00:15
+#BSUB -o "./out_files/100/32.out"
+#BSUB -e "./err_files/100/32.err"
+#BSUB -R "affinity[core(16)]"
+OMP_NUM_THREADS=32
+/polusfs/lsf/openmp/launchOpenMP.py ./prog 100
+
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   305.44 sec.
+    Max Memory :                                 136 MB
+    Average Memory :                             103.00 MB
+    Total Requested Memory :                     -
+    Delta Memory :                               -
+    Max Swap :                                   -
+    Max Processes :                              4
+    Max Threads :                                36
+    Run time :                                   14 sec.
+    Turnaround time :                            3366 sec.
+
+The output (if any) follows:
+
+Generation started
+Generation time: 0.411219
+Iter Num: 94
+Full time: 13.4833
+Avg time: 0.269667
+Residual: 7.00056e-13
+||Ax-b|| = 3.16144e-12
+Error: 8.18506e-13
+
+
+PS:
+
+Read file <./err_files/100/32.err> for stderr output of this job.
+
+Sender: LSF System <lsfadmin@polus-c3-ib.bmc.hpc.cs.msu.ru>
+Subject: Job 884362: <#BSUB -W 00:15;#BSUB -o "./out_files/100/32.out";#BSUB -e "./err_files/100/32.err";#BSUB -R "affinity[core(16)]";OMP_NUM_THREADS=32;/polusfs/lsf/openmp/launchOpenMP.py ./prog 100> in cluster <MSUCluster> Done
+
+Job <#BSUB -W 00:15;#BSUB -o "./out_files/100/32.out";#BSUB -e "./err_files/100/32.err";#BSUB -R "affinity[core(16)]";OMP_NUM_THREADS=32;/polusfs/lsf/openmp/launchOpenMP.py ./prog 100> was submitted from host <polus-ib.bmc.hpc.cs.msu.ru> by user <edu-cmc-sqi21-01> in cluster <MSUCluster> at Wed May 25 02:50:37 2022
+Job was executed on host(s) <polus-c3-ib.bmc.hpc.cs.msu.ru>, in queue <short>, as user <edu-cmc-sqi21-01> in cluster <MSUCluster> at Wed May 25 04:41:01 2022
+</home_edu/edu-cmc-sqi21/edu-cmc-sqi21-01> was used as the home directory.
+</home_edu/edu-cmc-sqi21/edu-cmc-sqi21-01/Prac/prac/task3> was used as the working directory.
+Started at Wed May 25 04:41:01 2022
+Terminated at Wed May 25 04:41:16 2022
+Results reported at Wed May 25 04:41:16 2022
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#BSUB -W 00:15
+#BSUB -o "./out_files/100/32.out"
+#BSUB -e "./err_files/100/32.err"
+#BSUB -R "affinity[core(16)]"
+OMP_NUM_THREADS=32
+/polusfs/lsf/openmp/launchOpenMP.py ./prog 100
+
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   310.23 sec.
+    Max Memory :                                 136 MB
+    Average Memory :                             102.25 MB
+    Total Requested Memory :                     -
+    Delta Memory :                               -
+    Max Swap :                                   -
+    Max Processes :                              4
+    Max Threads :                                36
+    Run time :                                   14 sec.
+    Turnaround time :                            6639 sec.
+
+The output (if any) follows:
+
+Generation started
+Generation time: 0.411159
+Iter Num: 94
+Full time: 13.6254
+Avg time: 0.272507
+Residual: 7.00056e-13
+||Ax-b|| = 3.16144e-12
+Error: 8.18506e-13
+
+
+PS:
+
+Read file <./err_files/100/32.err> for stderr output of this job.
+

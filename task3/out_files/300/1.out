@@ -1,13 +1,13 @@
 Sender: LSF System <lsfadmin@polus-c1-ib.bmc.hpc.cs.msu.ru>
-Subject: Job 884171: <#BSUB -n 1;#BSUB -W 00:15;#BSUB -o "./out_files/300/1.out";#BSUB -e "./err_files/300/1.err";#BSUB -R "span[hosts=1]";OMP_NUM_THREADS=1 ./prog 300> in cluster <MSUCluster> Exited
+Subject: Job 884315: <#BSUB -n 1;#BSUB -W 00:15;#BSUB -o "./out_files/300/1.out";#BSUB -e "./err_files/300/1.err";#BSUB -R "span[hosts=1]";OMP_NUM_THREADS=1 ./prog 300> in cluster <MSUCluster> Exited
 
-Job <#BSUB -n 1;#BSUB -W 00:15;#BSUB -o "./out_files/300/1.out";#BSUB -e "./err_files/300/1.err";#BSUB -R "span[hosts=1]";OMP_NUM_THREADS=1 ./prog 300> was submitted from host <polus-ib.bmc.hpc.cs.msu.ru> by user <edu-cmc-sqi21-01> in cluster <MSUCluster> at Wed May 25 02:39:58 2022
-Job was executed on host(s) <polus-c1-ib.bmc.hpc.cs.msu.ru>, in queue <short>, as user <edu-cmc-sqi21-01> in cluster <MSUCluster> at Wed May 25 02:40:02 2022
+Job <#BSUB -n 1;#BSUB -W 00:15;#BSUB -o "./out_files/300/1.out";#BSUB -e "./err_files/300/1.err";#BSUB -R "span[hosts=1]";OMP_NUM_THREADS=1 ./prog 300> was submitted from host <polus-ib.bmc.hpc.cs.msu.ru> by user <edu-cmc-sqi21-01> in cluster <MSUCluster> at Wed May 25 02:50:37 2022
+Job was executed on host(s) <polus-c1-ib.bmc.hpc.cs.msu.ru>, in queue <short>, as user <edu-cmc-sqi21-01> in cluster <MSUCluster> at Wed May 25 02:59:00 2022
 </home_edu/edu-cmc-sqi21/edu-cmc-sqi21-01> was used as the home directory.
 </home_edu/edu-cmc-sqi21/edu-cmc-sqi21-01/Prac/prac/task3> was used as the working directory.
-Started at Wed May 25 02:40:02 2022
-Terminated at Wed May 25 02:40:04 2022
-Results reported at Wed May 25 02:40:04 2022
+Started at Wed May 25 02:59:00 2022
+Terminated at Wed May 25 03:14:06 2022
+Results reported at Wed May 25 03:14:06 2022
 
 Your job looked like:
 
@@ -22,24 +22,176 @@ OMP_NUM_THREADS=1 ./prog 300
 
 ------------------------------------------------------------
 
-TERM_OWNER: job killed by owner.
-Exited with signal termination: 2.
+TERM_RUNLIMIT: job killed after reaching LSF run time limit.
+Exited with exit code 140.
 
 Resource usage summary:
 
-    CPU time :                                   0.01 sec.
-    Max Memory :                                 1 MB
-    Average Memory :                             1.00 MB
+    CPU time :                                   903.00 sec.
+    Max Memory :                                 3404 MB
+    Average Memory :                             3328.73 MB
     Total Requested Memory :                     -
     Delta Memory :                               -
     Max Swap :                                   -
-    Max Processes :                              1
-    Max Threads :                                1
-    Run time :                                   3 sec.
-    Turnaround time :                            6 sec.
+    Max Processes :                              4
+    Max Threads :                                5
+    Run time :                                   905 sec.
+    Turnaround time :                            1409 sec.
 
 The output (if any) follows:
 
+Generation started
+Generation time: 16.0973
+
+
+PS:
+
+Read file <./err_files/300/1.err> for stderr output of this job.
+
+Sender: LSF System <lsfadmin@polus-c4-ib.bmc.hpc.cs.msu.ru>
+Subject: Job 884333: <#BSUB -n 1;#BSUB -W 00:15;#BSUB -o "./out_files/300/1.out";#BSUB -e "./err_files/300/1.err";#BSUB -R "span[hosts=1]";OMP_NUM_THREADS=1 ./prog 300> in cluster <MSUCluster> Exited
+
+Job <#BSUB -n 1;#BSUB -W 00:15;#BSUB -o "./out_files/300/1.out";#BSUB -e "./err_files/300/1.err";#BSUB -R "span[hosts=1]";OMP_NUM_THREADS=1 ./prog 300> was submitted from host <polus-ib.bmc.hpc.cs.msu.ru> by user <edu-cmc-sqi21-01> in cluster <MSUCluster> at Wed May 25 02:50:37 2022
+Job was executed on host(s) <polus-c4-ib.bmc.hpc.cs.msu.ru>, in queue <short>, as user <edu-cmc-sqi21-01> in cluster <MSUCluster> at Wed May 25 03:34:37 2022
+</home_edu/edu-cmc-sqi21/edu-cmc-sqi21-01> was used as the home directory.
+</home_edu/edu-cmc-sqi21/edu-cmc-sqi21-01/Prac/prac/task3> was used as the working directory.
+Started at Wed May 25 03:34:37 2022
+Terminated at Wed May 25 03:49:35 2022
+Results reported at Wed May 25 03:49:35 2022
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#BSUB -n 1
+#BSUB -W 00:15
+#BSUB -o "./out_files/300/1.out"
+#BSUB -e "./err_files/300/1.err"
+#BSUB -R "span[hosts=1]"
+OMP_NUM_THREADS=1 ./prog 300
+
+------------------------------------------------------------
+
+TERM_RUNLIMIT: job killed after reaching LSF run time limit.
+Exited with exit code 140.
+
+Resource usage summary:
+
+    CPU time :                                   897.00 sec.
+    Max Memory :                                 3404 MB
+    Average Memory :                             3326.42 MB
+    Total Requested Memory :                     -
+    Delta Memory :                               -
+    Max Swap :                                   -
+    Max Processes :                              4
+    Max Threads :                                5
+    Run time :                                   904 sec.
+    Turnaround time :                            3538 sec.
+
+The output (if any) follows:
+
+Generation started
+Generation time: 17.306
+
+
+PS:
+
+Read file <./err_files/300/1.err> for stderr output of this job.
+
+Sender: LSF System <lsfadmin@polus-c4-ib.bmc.hpc.cs.msu.ru>
+Subject: Job 884351: <#BSUB -n 1;#BSUB -W 00:15;#BSUB -o "./out_files/300/1.out";#BSUB -e "./err_files/300/1.err";#BSUB -R "span[hosts=1]";OMP_NUM_THREADS=1 ./prog 300> in cluster <MSUCluster> Exited
+
+Job <#BSUB -n 1;#BSUB -W 00:15;#BSUB -o "./out_files/300/1.out";#BSUB -e "./err_files/300/1.err";#BSUB -R "span[hosts=1]";OMP_NUM_THREADS=1 ./prog 300> was submitted from host <polus-ib.bmc.hpc.cs.msu.ru> by user <edu-cmc-sqi21-01> in cluster <MSUCluster> at Wed May 25 02:50:37 2022
+Job was executed on host(s) <polus-c4-ib.bmc.hpc.cs.msu.ru>, in queue <short>, as user <edu-cmc-sqi21-01> in cluster <MSUCluster> at Wed May 25 04:04:37 2022
+</home_edu/edu-cmc-sqi21/edu-cmc-sqi21-01> was used as the home directory.
+</home_edu/edu-cmc-sqi21/edu-cmc-sqi21-01/Prac/prac/task3> was used as the working directory.
+Started at Wed May 25 04:04:37 2022
+Terminated at Wed May 25 04:19:40 2022
+Results reported at Wed May 25 04:19:40 2022
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#BSUB -n 1
+#BSUB -W 00:15
+#BSUB -o "./out_files/300/1.out"
+#BSUB -e "./err_files/300/1.err"
+#BSUB -R "span[hosts=1]"
+OMP_NUM_THREADS=1 ./prog 300
+
+------------------------------------------------------------
+
+TERM_RUNLIMIT: job killed after reaching LSF run time limit.
+Exited with exit code 140.
+
+Resource usage summary:
+
+    CPU time :                                   901.00 sec.
+    Max Memory :                                 3404 MB
+    Average Memory :                             3331.75 MB
+    Total Requested Memory :                     -
+    Delta Memory :                               -
+    Max Swap :                                   -
+    Max Processes :                              4
+    Max Threads :                                5
+    Run time :                                   903 sec.
+    Turnaround time :                            5343 sec.
+
+The output (if any) follows:
+
+Generation started
+Generation time: 15.5284
+
+
+PS:
+
+Read file <./err_files/300/1.err> for stderr output of this job.
+
+Sender: LSF System <lsfadmin@polus-c3-ib.bmc.hpc.cs.msu.ru>
+Subject: Job 884369: <#BSUB -n 1;#BSUB -W 00:15;#BSUB -o "./out_files/300/1.out";#BSUB -e "./err_files/300/1.err";#BSUB -R "span[hosts=1]";OMP_NUM_THREADS=1 ./prog 300> in cluster <MSUCluster> Exited
+
+Job <#BSUB -n 1;#BSUB -W 00:15;#BSUB -o "./out_files/300/1.out";#BSUB -e "./err_files/300/1.err";#BSUB -R "span[hosts=1]";OMP_NUM_THREADS=1 ./prog 300> was submitted from host <polus-ib.bmc.hpc.cs.msu.ru> by user <edu-cmc-sqi21-01> in cluster <MSUCluster> at Wed May 25 02:50:37 2022
+Job was executed on host(s) <polus-c3-ib.bmc.hpc.cs.msu.ru>, in queue <short>, as user <edu-cmc-sqi21-01> in cluster <MSUCluster> at Wed May 25 04:25:54 2022
+</home_edu/edu-cmc-sqi21/edu-cmc-sqi21-01> was used as the home directory.
+</home_edu/edu-cmc-sqi21/edu-cmc-sqi21-01/Prac/prac/task3> was used as the working directory.
+Started at Wed May 25 04:25:54 2022
+Terminated at Wed May 25 04:41:00 2022
+Results reported at Wed May 25 04:41:00 2022
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#BSUB -n 1
+#BSUB -W 00:15
+#BSUB -o "./out_files/300/1.out"
+#BSUB -e "./err_files/300/1.err"
+#BSUB -R "span[hosts=1]"
+OMP_NUM_THREADS=1 ./prog 300
+
+------------------------------------------------------------
+
+TERM_RUNLIMIT: job killed after reaching LSF run time limit.
+Exited with exit code 140.
+
+Resource usage summary:
+
+    CPU time :                                   906.00 sec.
+    Max Memory :                                 3404 MB
+    Average Memory :                             3322.60 MB
+    Total Requested Memory :                     -
+    Delta Memory :                               -
+    Max Swap :                                   -
+    Max Processes :                              4
+    Max Threads :                                5
+    Run time :                                   907 sec.
+    Turnaround time :                            6623 sec.
+
+The output (if any) follows:
+
+Generation started
+Generation time: 15.421
 
 
 PS:

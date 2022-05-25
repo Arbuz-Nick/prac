@@ -69,7 +69,7 @@ void Matrix::generate(int _size) {
         }
         double sum = 0.0;
         for (int jj = 0; jj < row_size; jj++)
-          sum += abs(val[i * row_size + jj]);
+          sum += std::abs(val[i * row_size + jj]);
         val[i * row_size + diag_position] = 1.5 * sum;
       }
     }
