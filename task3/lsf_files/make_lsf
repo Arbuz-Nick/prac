@@ -13,7 +13,7 @@ echo "#BSUB -n 1
 #BSUB -o \"./out_files/$j/$i.out\"
 #BSUB -e \"./err_files/$j/$i.err\"
 #BSUB -R \"span[hosts=1]\"
-OMP_NUM_THREADS=$i ./prog $j">./$j/$i.lsf
+OMP_NUM_THREADS=$i ./prog $j 100 20">./$j/$i.lsf
 done
 
 for ((i = 4 ; i <= 32; i *= 2))
@@ -24,6 +24,6 @@ echo "#BSUB -W 00:15
 #BSUB -e \"./err_files/$j/$i.err\"
 #BSUB -R \"affinity[core($M)]\"
 OMP_NUM_THREADS=$i
-/polusfs/lsf/openmp/launchOpenMP.py ./prog $j">./$j/$i.lsf
+/polusfs/lsf/openmp/launchOpenMP.py ./prog $j 100 20">./$j/$i.lsf
 done
 done

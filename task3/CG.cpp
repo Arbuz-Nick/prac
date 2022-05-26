@@ -14,9 +14,6 @@ double norm(const std::vector<double>& vec) {
 void spmv(const Matrix& A,
           const std::vector<double>& x,
           std::vector<double>& b) {
-  auto nthreads = omp_get_max_threads();
-  omp_set_num_threads(nthreads);
-
   unsigned int nrows = A.nrows;
   unsigned int width = A.row_size;
 #pragma omp parallel for
@@ -28,9 +25,6 @@ void spmv(const Matrix& A,
 }
 
 double dot(const std::vector<double>& x, const std::vector<double>& y) {
-  auto nthreads = omp_get_max_threads();
-  omp_set_num_threads(nthreads);
-
   double res = 0.0;
 
 #pragma omp parallel for reduction(+ : res)
@@ -44,8 +38,6 @@ void lin_comb(const double a,
               std::vector<double>& x,
               const double b,
               const std::vector<double>& y) {
-  auto nthreads = omp_get_max_threads();
-  omp_set_num_threads(nthreads);
 #pragma omp parallel for
   for (int i = 0; i < y.size(); i++)
     x[i] = a * x[i] + b * y[i];
@@ -162,6 +154,6 @@ void CG(const int size,
   std::ofstream result;
   result.open("result_omp_polus.csv", std::ios_base::app);
   result << size << ";" << omp_get_max_threads() << ";" << full_time / run_iters
-         << ";" << res << ";" << err << std::endl;
+         << ";" << full_spmv / run_iters << ";" << full_dot / (2 * run_iters) << ";" << full_lin / (2 * run_iters) << ";" << res << ";" << err << std::endl;
   result.close();
 }

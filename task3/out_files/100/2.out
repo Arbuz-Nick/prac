@@ -1,13 +1,13 @@
 Sender: LSF System <lsfadmin@polus-c1-ib.bmc.hpc.cs.msu.ru>
-Subject: Job 884304: <#BSUB -n 1;#BSUB -W 00:15;#BSUB -o "./out_files/100/2.out";#BSUB -e "./err_files/100/2.err";#BSUB -R "span[hosts=1]";OMP_NUM_THREADS=2 ./prog 100> in cluster <MSUCluster> Done
+Subject: Job 884894: <#BSUB -n 1;#BSUB -W 00:15;#BSUB -o "./out_files/100/2.out";#BSUB -e "./err_files/100/2.err";#BSUB -R "span[hosts=1]";OMP_NUM_THREADS=2 ./prog 100 100 20> in cluster <MSUCluster> Done
 
-Job <#BSUB -n 1;#BSUB -W 00:15;#BSUB -o "./out_files/100/2.out";#BSUB -e "./err_files/100/2.err";#BSUB -R "span[hosts=1]";OMP_NUM_THREADS=2 ./prog 100> was submitted from host <polus-ib.bmc.hpc.cs.msu.ru> by user <edu-cmc-sqi21-01> in cluster <MSUCluster> at Wed May 25 02:50:37 2022
-Job was executed on host(s) <polus-c1-ib.bmc.hpc.cs.msu.ru>, in queue <short>, as user <edu-cmc-sqi21-01> in cluster <MSUCluster> at Wed May 25 02:50:38 2022
+Job <#BSUB -n 1;#BSUB -W 00:15;#BSUB -o "./out_files/100/2.out";#BSUB -e "./err_files/100/2.err";#BSUB -R "span[hosts=1]";OMP_NUM_THREADS=2 ./prog 100 100 20> was submitted from host <polus-ib.bmc.hpc.cs.msu.ru> by user <edu-cmc-sqi21-01> in cluster <MSUCluster> at Wed May 25 11:59:06 2022
+Job was executed on host(s) <polus-c1-ib.bmc.hpc.cs.msu.ru>, in queue <short>, as user <edu-cmc-sqi21-01> in cluster <MSUCluster> at Wed May 25 12:12:03 2022
 </home_edu/edu-cmc-sqi21/edu-cmc-sqi21-01> was used as the home directory.
 </home_edu/edu-cmc-sqi21/edu-cmc-sqi21-01/Prac/prac/task3> was used as the working directory.
-Started at Wed May 25 02:50:38 2022
-Terminated at Wed May 25 02:51:29 2022
-Results reported at Wed May 25 02:51:29 2022
+Started at Wed May 25 12:12:03 2022
+Terminated at Wed May 25 12:12:23 2022
+Results reported at Wed May 25 12:12:23 2022
 
 Your job looked like:
 
@@ -18,7 +18,7 @@ Your job looked like:
 #BSUB -o "./out_files/100/2.out"
 #BSUB -e "./err_files/100/2.err"
 #BSUB -R "span[hosts=1]"
-OMP_NUM_THREADS=2 ./prog 100
+OMP_NUM_THREADS=2 ./prog 100 100 20
 
 ------------------------------------------------------------
 
@@ -26,24 +26,27 @@ Successfully completed.
 
 Resource usage summary:
 
-    CPU time :                                   93.94 sec.
+    CPU time :                                   37.11 sec.
     Max Memory :                                 132 MB
-    Average Memory :                             115.62 MB
+    Average Memory :                             105.80 MB
     Total Requested Memory :                     -
     Delta Memory :                               -
     Max Swap :                                   -
     Max Processes :                              4
     Max Threads :                                6
-    Run time :                                   50 sec.
-    Turnaround time :                            52 sec.
+    Run time :                                   20 sec.
+    Turnaround time :                            797 sec.
 
 The output (if any) follows:
 
 Generation started
-Generation time: 0.412698
+Generation time: 0.412109
 Iter Num: 94
-Full time: 48.7657
-Avg time: 0.975315
+Full time: 19.1316
+Avg time: 0.956578
+Avg spmv time: 0.000287537
+Avg dot time: 0.0721276
+Avg lin comb time: 0.0418368
 Residual: 7.00056e-13
 ||Ax-b|| = 3.16067e-12
 Error: 8.18286e-13
@@ -53,16 +56,16 @@ PS:
 
 Read file <./err_files/100/2.err> for stderr output of this job.
 
-Sender: LSF System <lsfadmin@polus-c1-ib.bmc.hpc.cs.msu.ru>
-Subject: Job 884322: <#BSUB -n 1;#BSUB -W 00:15;#BSUB -o "./out_files/100/2.out";#BSUB -e "./err_files/100/2.err";#BSUB -R "span[hosts=1]";OMP_NUM_THREADS=2 ./prog 100> in cluster <MSUCluster> Done
+Sender: LSF System <lsfadmin@polus-c4-ib.bmc.hpc.cs.msu.ru>
+Subject: Job 884930: <#BSUB -n 1;#BSUB -W 00:15;#BSUB -o "./out_files/100/2.out";#BSUB -e "./err_files/100/2.err";#BSUB -R "span[hosts=1]";OMP_NUM_THREADS=2 ./prog 100 100 20> in cluster <MSUCluster> Done
 
-Job <#BSUB -n 1;#BSUB -W 00:15;#BSUB -o "./out_files/100/2.out";#BSUB -e "./err_files/100/2.err";#BSUB -R "span[hosts=1]";OMP_NUM_THREADS=2 ./prog 100> was submitted from host <polus-ib.bmc.hpc.cs.msu.ru> by user <edu-cmc-sqi21-01> in cluster <MSUCluster> at Wed May 25 02:50:37 2022
-Job was executed on host(s) <polus-c1-ib.bmc.hpc.cs.msu.ru>, in queue <short>, as user <edu-cmc-sqi21-01> in cluster <MSUCluster> at Wed May 25 03:15:38 2022
+Job <#BSUB -n 1;#BSUB -W 00:15;#BSUB -o "./out_files/100/2.out";#BSUB -e "./err_files/100/2.err";#BSUB -R "span[hosts=1]";OMP_NUM_THREADS=2 ./prog 100 100 20> was submitted from host <polus-ib.bmc.hpc.cs.msu.ru> by user <edu-cmc-sqi21-01> in cluster <MSUCluster> at Wed May 25 12:10:50 2022
+Job was executed on host(s) <polus-c4-ib.bmc.hpc.cs.msu.ru>, in queue <short>, as user <edu-cmc-sqi21-01> in cluster <MSUCluster> at Wed May 25 12:47:37 2022
 </home_edu/edu-cmc-sqi21/edu-cmc-sqi21-01> was used as the home directory.
 </home_edu/edu-cmc-sqi21/edu-cmc-sqi21-01/Prac/prac/task3> was used as the working directory.
-Started at Wed May 25 03:15:38 2022
-Terminated at Wed May 25 03:16:30 2022
-Results reported at Wed May 25 03:16:30 2022
+Started at Wed May 25 12:47:37 2022
+Terminated at Wed May 25 12:48:07 2022
+Results reported at Wed May 25 12:48:07 2022
 
 Your job looked like:
 
@@ -73,7 +76,7 @@ Your job looked like:
 #BSUB -o "./out_files/100/2.out"
 #BSUB -e "./err_files/100/2.err"
 #BSUB -R "span[hosts=1]"
-OMP_NUM_THREADS=2 ./prog 100
+OMP_NUM_THREADS=2 ./prog 100 100 20
 
 ------------------------------------------------------------
 
@@ -81,24 +84,85 @@ Successfully completed.
 
 Resource usage summary:
 
-    CPU time :                                   96.19 sec.
+    CPU time :                                   56.70 sec.
     Max Memory :                                 132 MB
-    Average Memory :                             118.90 MB
+    Average Memory :                             110.17 MB
     Total Requested Memory :                     -
     Delta Memory :                               -
     Max Swap :                                   -
     Max Processes :                              4
     Max Threads :                                6
-    Run time :                                   51 sec.
-    Turnaround time :                            1553 sec.
+    Run time :                                   37 sec.
+    Turnaround time :                            2237 sec.
 
 The output (if any) follows:
 
 Generation started
-Generation time: 0.424511
+Generation time: 0.40825
 Iter Num: 94
-Full time: 49.8803
-Avg time: 0.997606
+Full time: 29.0219
+Avg time: 1.45109
+Avg spmv time: 0.00143292
+Avg dot time: 0.0802972
+Avg lin comb time: 0.0723938
+Residual: 7.00056e-13
+||Ax-b|| = 3.16067e-12
+Error: 8.18286e-13
+
+
+PS:
+
+Read file <./err_files/100/2.err> for stderr output of this job.
+
+Sender: LSF System <lsfadmin@polus-c4-ib.bmc.hpc.cs.msu.ru>
+Subject: Job 884942: <#BSUB -n 1;#BSUB -W 00:15;#BSUB -o "./out_files/100/2.out";#BSUB -e "./err_files/100/2.err";#BSUB -R "span[hosts=1]";OMP_NUM_THREADS=2 ./prog 100 100 20> in cluster <MSUCluster> Done
+
+Job <#BSUB -n 1;#BSUB -W 00:15;#BSUB -o "./out_files/100/2.out";#BSUB -e "./err_files/100/2.err";#BSUB -R "span[hosts=1]";OMP_NUM_THREADS=2 ./prog 100 100 20> was submitted from host <polus-ib.bmc.hpc.cs.msu.ru> by user <edu-cmc-sqi21-01> in cluster <MSUCluster> at Wed May 25 12:10:50 2022
+Job was executed on host(s) <polus-c4-ib.bmc.hpc.cs.msu.ru>, in queue <short>, as user <edu-cmc-sqi21-01> in cluster <MSUCluster> at Wed May 25 12:52:07 2022
+</home_edu/edu-cmc-sqi21/edu-cmc-sqi21-01> was used as the home directory.
+</home_edu/edu-cmc-sqi21/edu-cmc-sqi21-01/Prac/prac/task3> was used as the working directory.
+Started at Wed May 25 12:52:07 2022
+Terminated at Wed May 25 12:52:33 2022
+Results reported at Wed May 25 12:52:33 2022
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#BSUB -n 1
+#BSUB -W 00:15
+#BSUB -o "./out_files/100/2.out"
+#BSUB -e "./err_files/100/2.err"
+#BSUB -R "span[hosts=1]"
+OMP_NUM_THREADS=2 ./prog 100 100 20
+
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   50.01 sec.
+    Max Memory :                                 132 MB
+    Average Memory :                             110.67 MB
+    Total Requested Memory :                     -
+    Delta Memory :                               -
+    Max Swap :                                   -
+    Max Processes :                              4
+    Max Threads :                                6
+    Run time :                                   27 sec.
+    Turnaround time :                            2503 sec.
+
+The output (if any) follows:
+
+Generation started
+Generation time: 0.416884
+Iter Num: 94
+Full time: 25.6159
+Avg time: 1.2808
+Avg spmv time: 0.000291733
+Avg dot time: 0.0792404
+Avg lin comb time: 0.064492
 Residual: 7.00056e-13
 ||Ax-b|| = 3.16067e-12
 Error: 8.18286e-13
@@ -109,15 +173,15 @@ PS:
 Read file <./err_files/100/2.err> for stderr output of this job.
 
 Sender: LSF System <lsfadmin@polus-c3-ib.bmc.hpc.cs.msu.ru>
-Subject: Job 884340: <#BSUB -n 1;#BSUB -W 00:15;#BSUB -o "./out_files/100/2.out";#BSUB -e "./err_files/100/2.err";#BSUB -R "span[hosts=1]";OMP_NUM_THREADS=2 ./prog 100> in cluster <MSUCluster> Done
+Subject: Job 884954: <#BSUB -n 1;#BSUB -W 00:15;#BSUB -o "./out_files/100/2.out";#BSUB -e "./err_files/100/2.err";#BSUB -R "span[hosts=1]";OMP_NUM_THREADS=2 ./prog 100 100 20> in cluster <MSUCluster> Done
 
-Job <#BSUB -n 1;#BSUB -W 00:15;#BSUB -o "./out_files/100/2.out";#BSUB -e "./err_files/100/2.err";#BSUB -R "span[hosts=1]";OMP_NUM_THREADS=2 ./prog 100> was submitted from host <polus-ib.bmc.hpc.cs.msu.ru> by user <edu-cmc-sqi21-01> in cluster <MSUCluster> at Wed May 25 02:50:37 2022
-Job was executed on host(s) <polus-c3-ib.bmc.hpc.cs.msu.ru>, in queue <short>, as user <edu-cmc-sqi21-01> in cluster <MSUCluster> at Wed May 25 03:57:19 2022
+Job <#BSUB -n 1;#BSUB -W 00:15;#BSUB -o "./out_files/100/2.out";#BSUB -e "./err_files/100/2.err";#BSUB -R "span[hosts=1]";OMP_NUM_THREADS=2 ./prog 100 100 20> was submitted from host <polus-ib.bmc.hpc.cs.msu.ru> by user <edu-cmc-sqi21-01> in cluster <MSUCluster> at Wed May 25 12:10:51 2022
+Job was executed on host(s) <polus-c3-ib.bmc.hpc.cs.msu.ru>, in queue <short>, as user <edu-cmc-sqi21-01> in cluster <MSUCluster> at Wed May 25 12:53:51 2022
 </home_edu/edu-cmc-sqi21/edu-cmc-sqi21-01> was used as the home directory.
 </home_edu/edu-cmc-sqi21/edu-cmc-sqi21-01/Prac/prac/task3> was used as the working directory.
-Started at Wed May 25 03:57:19 2022
-Terminated at Wed May 25 03:58:09 2022
-Results reported at Wed May 25 03:58:09 2022
+Started at Wed May 25 12:53:51 2022
+Terminated at Wed May 25 12:54:11 2022
+Results reported at Wed May 25 12:54:11 2022
 
 Your job looked like:
 
@@ -128,7 +192,7 @@ Your job looked like:
 #BSUB -o "./out_files/100/2.out"
 #BSUB -e "./err_files/100/2.err"
 #BSUB -R "span[hosts=1]"
-OMP_NUM_THREADS=2 ./prog 100
+OMP_NUM_THREADS=2 ./prog 100 100 20
 
 ------------------------------------------------------------
 
@@ -136,24 +200,27 @@ Successfully completed.
 
 Resource usage summary:
 
-    CPU time :                                   91.47 sec.
+    CPU time :                                   36.80 sec.
     Max Memory :                                 132 MB
-    Average Memory :                             117.44 MB
+    Average Memory :                             105.80 MB
     Total Requested Memory :                     -
     Delta Memory :                               -
     Max Swap :                                   -
     Max Processes :                              4
     Max Threads :                                6
-    Run time :                                   55 sec.
-    Turnaround time :                            4052 sec.
+    Run time :                                   20 sec.
+    Turnaround time :                            2600 sec.
 
 The output (if any) follows:
 
 Generation started
-Generation time: 0.411801
+Generation time: 0.40875
 Iter Num: 94
-Full time: 47.5453
-Avg time: 0.950907
+Full time: 18.9751
+Avg time: 0.948756
+Avg spmv time: 0.000287273
+Avg dot time: 0.0719141
+Avg lin comb time: 0.0417832
 Residual: 7.00056e-13
 ||Ax-b|| = 3.16067e-12
 Error: 8.18286e-13
@@ -163,16 +230,16 @@ PS:
 
 Read file <./err_files/100/2.err> for stderr output of this job.
 
-Sender: LSF System <lsfadmin@polus-c3-ib.bmc.hpc.cs.msu.ru>
-Subject: Job 884358: <#BSUB -n 1;#BSUB -W 00:15;#BSUB -o "./out_files/100/2.out";#BSUB -e "./err_files/100/2.err";#BSUB -R "span[hosts=1]";OMP_NUM_THREADS=2 ./prog 100> in cluster <MSUCluster> Done
+Sender: LSF System <lsfadmin@polus-c4-ib.bmc.hpc.cs.msu.ru>
+Subject: Job 884966: <#BSUB -n 1;#BSUB -W 00:15;#BSUB -o "./out_files/100/2.out";#BSUB -e "./err_files/100/2.err";#BSUB -R "span[hosts=1]";OMP_NUM_THREADS=2 ./prog 100 100 20> in cluster <MSUCluster> Done
 
-Job <#BSUB -n 1;#BSUB -W 00:15;#BSUB -o "./out_files/100/2.out";#BSUB -e "./err_files/100/2.err";#BSUB -R "span[hosts=1]";OMP_NUM_THREADS=2 ./prog 100> was submitted from host <polus-ib.bmc.hpc.cs.msu.ru> by user <edu-cmc-sqi21-01> in cluster <MSUCluster> at Wed May 25 02:50:37 2022
-Job was executed on host(s) <polus-c3-ib.bmc.hpc.cs.msu.ru>, in queue <short>, as user <edu-cmc-sqi21-01> in cluster <MSUCluster> at Wed May 25 04:12:18 2022
+Job <#BSUB -n 1;#BSUB -W 00:15;#BSUB -o "./out_files/100/2.out";#BSUB -e "./err_files/100/2.err";#BSUB -R "span[hosts=1]";OMP_NUM_THREADS=2 ./prog 100 100 20> was submitted from host <polus-ib.bmc.hpc.cs.msu.ru> by user <edu-cmc-sqi21-01> in cluster <MSUCluster> at Wed May 25 12:10:51 2022
+Job was executed on host(s) <polus-c4-ib.bmc.hpc.cs.msu.ru>, in queue <short>, as user <edu-cmc-sqi21-01> in cluster <MSUCluster> at Wed May 25 12:58:28 2022
 </home_edu/edu-cmc-sqi21/edu-cmc-sqi21-01> was used as the home directory.
 </home_edu/edu-cmc-sqi21/edu-cmc-sqi21-01/Prac/prac/task3> was used as the working directory.
-Started at Wed May 25 04:12:18 2022
-Terminated at Wed May 25 04:13:07 2022
-Results reported at Wed May 25 04:13:07 2022
+Started at Wed May 25 12:58:28 2022
+Terminated at Wed May 25 12:58:50 2022
+Results reported at Wed May 25 12:58:50 2022
 
 Your job looked like:
 
@@ -183,7 +250,7 @@ Your job looked like:
 #BSUB -o "./out_files/100/2.out"
 #BSUB -e "./err_files/100/2.err"
 #BSUB -R "span[hosts=1]"
-OMP_NUM_THREADS=2 ./prog 100
+OMP_NUM_THREADS=2 ./prog 100 100 20
 
 ------------------------------------------------------------
 
@@ -191,24 +258,27 @@ Successfully completed.
 
 Resource usage summary:
 
-    CPU time :                                   91.02 sec.
+    CPU time :                                   39.03 sec.
     Max Memory :                                 132 MB
-    Average Memory :                             117.44 MB
+    Average Memory :                             106.40 MB
     Total Requested Memory :                     -
     Delta Memory :                               -
     Max Swap :                                   -
     Max Processes :                              4
     Max Threads :                                6
-    Run time :                                   48 sec.
-    Turnaround time :                            4950 sec.
+    Run time :                                   21 sec.
+    Turnaround time :                            2879 sec.
 
 The output (if any) follows:
 
 Generation started
-Generation time: 0.411577
+Generation time: 0.429366
 Iter Num: 94
-Full time: 47.306
-Avg time: 0.94612
+Full time: 20.1617
+Avg time: 1.00809
+Avg spmv time: 0.00029207
+Avg dot time: 0.0741021
+Avg lin comb time: 0.04786
 Residual: 7.00056e-13
 ||Ax-b|| = 3.16067e-12
 Error: 8.18286e-13

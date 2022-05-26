@@ -8,14 +8,14 @@ rm -rf ./err_files/200/*.err
 rm -rf ./out_files/300/*.out
 rm -rf ./err_files/300/*.err
 
-echo "MatrixSize;Nthreads;Time;Residual;Error">result_omp_polus.csv
+echo "MatrixSize;Nthreads;Time;SpmvTime;DotTime;LinCombTime;Residual;Error">result_omp_polus.csv
 
 ./make_dirs
 
 make omp_polus
 for ((k = 0; k < 4; k += 1))
 do
-for j in 100 200 300
+for j in 100 200
 do
 for ((i = 1; i <= 32; i *= 2))
 do

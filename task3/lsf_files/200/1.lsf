@@ -3,4 +3,4 @@
 #BSUB -o "./out_files/200/1.out"
 #BSUB -e "./err_files/200/1.err"
 #BSUB -R "span[hosts=1]"
-OMP_NUM_THREADS=1 ./prog 200
+OMP_NUM_THREADS=1 ./prog 200 100 20

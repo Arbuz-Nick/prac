@@ -3,4 +3,4 @@
 #BSUB -e "./err_files/200/16.err"
 #BSUB -R "affinity[core(8)]"
 OMP_NUM_THREADS=16
-/polusfs/lsf/openmp/launchOpenMP.py ./prog 200
+/polusfs/lsf/openmp/launchOpenMP.py ./prog 200 100 20
