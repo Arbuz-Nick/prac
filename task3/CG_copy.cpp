@@ -16,19 +16,19 @@ void spmv(const Matrix& A,
           std::vector<double>& b) {
   unsigned int nrows = A.nrows;
   unsigned int width = A.row_size;
-//#pragma omp parallel for
+  //#pragma omp parallel for
   for (int i = 0; i < nrows; i++) {
     b[i] = 0.0;
-    for (int j = 0; j < A.row_size; j++)
+    for (int j = 0; j < width; j++)
       b[i] += x[A.col[i * width + j]] * A.val[i * width + j];
   }
 }
 
 double dot(const std::vector<double>& x, const std::vector<double>& y) {
   double res = 0.0;
-
-//#pragma omp parallel for reduction(+ : res)
-  for (int i = 0; i < x.size(); i++)
+  int x_size = x.size();
+  //#pragma omp parallel for reduction(+ : res)
+  for (int i = 0; i < x_size; i++)
     res += x[i] * y[i];
 
   return res;
@@ -38,8 +38,9 @@ void lin_comb(const double a,
               std::vector<double>& x,
               const double b,
               const std::vector<double>& y) {
-//#pragma omp parallel for
-  for (int i = 0; i < y.size(); i++)
+  int y_size = y.size();
+  //#pragma omp parallel for
+  for (int i = 0; i < y_size; i++)
     x[i] = a * x[i] + b * y[i];
 }
 
@@ -110,7 +111,7 @@ void CG(const int size,
 
       spmv_start = now();
       spmv(A, p, q);
-      full_spmv = now() - spmv_start;
+      full_spmv += now() - spmv_start;
 
       dot_start = now();
       double p2q = dot(p, q);
@@ -154,6 +155,8 @@ void CG(const int size,
   std::ofstream result;
   result.open("result_omp_polus.csv", std::ios_base::app);
   result << size << ";" << omp_get_max_threads() << ";" << full_time / run_iters
-         << ";" << full_spmv / run_iters << ";" << full_dot / (2 * run_iters) << ";" << full_lin / (2 * run_iters) << ";" << res << ";" << err << std::endl;
+         << ";" << full_spmv / run_iters << ";" << full_dot / (2 * run_iters)
+         << ";" << full_lin / (2 * run_iters) << ";" << res << ";" << err
+         << std::endl;
   result.close();
 }

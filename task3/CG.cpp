@@ -110,7 +110,7 @@ void CG(const int size,
 
       spmv_start = now();
       spmv(A, p, q);
-      full_spmv = now() - spmv_start;
+      full_spmv += now() - spmv_start;
 
       dot_start = now();
       double p2q = dot(p, q);
