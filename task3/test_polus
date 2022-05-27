@@ -13,13 +13,13 @@ echo "MatrixSize;Nthreads;Time;SpmvTime;DotTime;LinCombTime;Residual;Error">resu
 ./make_dirs
 
 make omp_polus
-for ((k = 0; k < 4; k += 1))
-do
-for j in 100 200
+#for ((k = 0; k < 4; k += 1))
+#do
+for j in 100
 do
 for ((i = 1; i <= 32; i *= 2))
 do
 bsub < ./lsf_files/$j/$i.lsf
 done
 done
-done
+#done
