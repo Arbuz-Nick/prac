@@ -288,3 +288,61 @@ PS:
 
 Read file <./err_files/100/1.err> for stderr output of this job.
 
+Sender: LSF System <lsfadmin@polus-c3-ib.bmc.hpc.cs.msu.ru>
+Subject: Job 886983: <#BSUB -n 1;#BSUB -W 00:15;#BSUB -o "./out_files/100/1.out";#BSUB -e "./err_files/100/1.err";#BSUB -R "span[hosts=1]";OMP_NUM_THREADS=1 ./prog 100 100 20> in cluster <MSUCluster> Done
+
+Job <#BSUB -n 1;#BSUB -W 00:15;#BSUB -o "./out_files/100/1.out";#BSUB -e "./err_files/100/1.err";#BSUB -R "span[hosts=1]";OMP_NUM_THREADS=1 ./prog 100 100 20> was submitted from host <polus-ib.bmc.hpc.cs.msu.ru> by user <edu-cmc-sqi21-01> in cluster <MSUCluster> at Fri May 27 15:14:44 2022
+Job was executed on host(s) <polus-c3-ib.bmc.hpc.cs.msu.ru>, in queue <short>, as user <edu-cmc-sqi21-01> in cluster <MSUCluster> at Fri May 27 15:39:24 2022
+</home_edu/edu-cmc-sqi21/edu-cmc-sqi21-01> was used as the home directory.
+</home_edu/edu-cmc-sqi21/edu-cmc-sqi21-01/Prac/prac/task3> was used as the working directory.
+Started at Fri May 27 15:39:24 2022
+Terminated at Fri May 27 15:40:05 2022
+Results reported at Fri May 27 15:40:05 2022
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#BSUB -n 1
+#BSUB -W 00:15
+#BSUB -o "./out_files/100/1.out"
+#BSUB -e "./err_files/100/1.err"
+#BSUB -R "span[hosts=1]"
+OMP_NUM_THREADS=1 ./prog 100 100 20
+
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   39.51 sec.
+    Max Memory :                                 132 MB
+    Average Memory :                             115.62 MB
+    Total Requested Memory :                     -
+    Delta Memory :                               -
+    Max Swap :                                   -
+    Max Processes :                              4
+    Max Threads :                                5
+    Run time :                                   40 sec.
+    Turnaround time :                            1521 sec.
+
+The output (if any) follows:
+
+Generation started
+Generation time: 0.4285
+Iter Num: 94
+Full time: 39.0007
+Avg time: 1.95004
+Avg spmv time: 0.000660365
+Avg dot time: 0.145787
+Avg lin comb time: 0.0913417
+Residual: 7.00056e-13
+||Ax-b|| = 3.16216e-12
+Error: 8.18254e-13
+
+
+PS:
+
+Read file <./err_files/100/1.err> for stderr output of this job.
+
