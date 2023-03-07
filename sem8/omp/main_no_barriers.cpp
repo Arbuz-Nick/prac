@@ -54,6 +54,6 @@ int main(int argc, char const *argv[])
     result.open("result_omp_polus.csv", std::ios_base::app);
     result << end_time - start_time << ";" << omp_get_max_threads() << ";" << n << ";no_barriers" << std::endl;
     result.close();
-    C.print();
+//    C.print();
     return 0;
 }
