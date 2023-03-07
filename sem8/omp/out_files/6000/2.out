@@ -1,0 +1,95 @@
+Sender: LSF System <lsfadmin@polus-c3-ib.bmc.hpc.cs.msu.ru>
+Subject: Job 1033417: <#BSUB -n 1;#BSUB -W 00:15;#BSUB -o "./out_files/6000/2.out";#BSUB -e "./err_files/6000/2.err";#BSUB -R "span[hosts=1]";OMP_NUM_THREADS=2 ./prog 6000> in cluster <MSUCluster> Done
+
+Job <#BSUB -n 1;#BSUB -W 00:15;#BSUB -o "./out_files/6000/2.out";#BSUB -e "./err_files/6000/2.err";#BSUB -R "span[hosts=1]";OMP_NUM_THREADS=2 ./prog 6000> was submitted from host <polus-ib.bmc.hpc.cs.msu.ru> by user <edu-cmc-sqi21-01> in cluster <MSUCluster> at Tue Mar  7 20:06:33 2023
+Job was executed on host(s) <polus-c3-ib.bmc.hpc.cs.msu.ru>, in queue <short>, as user <edu-cmc-sqi21-01> in cluster <MSUCluster> at Tue Mar  7 20:07:46 2023
+</home_edu/edu-cmc-sqi21/edu-cmc-sqi21-01> was used as the home directory.
+</home_edu/edu-cmc-sqi21/edu-cmc-sqi21-01/Prac/prac/sem8/omp> was used as the working directory.
+Started at Tue Mar  7 20:07:46 2023
+Terminated at Tue Mar  7 20:11:06 2023
+Results reported at Tue Mar  7 20:11:06 2023
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#BSUB -n 1
+#BSUB -W 00:15
+#BSUB -o "./out_files/6000/2.out"
+#BSUB -e "./err_files/6000/2.err"
+#BSUB -R "span[hosts=1]"
+OMP_NUM_THREADS=2 ./prog 6000
+
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   399.44 sec.
+    Max Memory :                                 830 MB
+    Average Memory :                             802.37 MB
+    Total Requested Memory :                     -
+    Delta Memory :                               -
+    Max Swap :                                   -
+    Max Processes :                              4
+    Max Threads :                                6
+    Run time :                                   201 sec.
+    Turnaround time :                            273 sec.
+
+The output (if any) follows:
+
+
+
+PS:
+
+Read file <./err_files/6000/2.err> for stderr output of this job.
+
+Sender: LSF System <lsfadmin@polus-c3-ib.bmc.hpc.cs.msu.ru>
+Subject: Job 1033453: <#BSUB -n 1;#BSUB -W 00:15;#BSUB -o "./out_files/6000/2.out";#BSUB -e "./err_files/6000/2.err";#BSUB -R "span[hosts=1]";OMP_NUM_THREADS=2 ./prog 6000> in cluster <MSUCluster> Exited
+
+Job <#BSUB -n 1;#BSUB -W 00:15;#BSUB -o "./out_files/6000/2.out";#BSUB -e "./err_files/6000/2.err";#BSUB -R "span[hosts=1]";OMP_NUM_THREADS=2 ./prog 6000> was submitted from host <polus-ib.bmc.hpc.cs.msu.ru> by user <edu-cmc-sqi21-01> in cluster <MSUCluster> at Tue Mar  7 20:06:33 2023
+Job was executed on host(s) <polus-c3-ib.bmc.hpc.cs.msu.ru>, in queue <short>, as user <edu-cmc-sqi21-01> in cluster <MSUCluster> at Tue Mar  7 20:11:36 2023
+</home_edu/edu-cmc-sqi21/edu-cmc-sqi21-01> was used as the home directory.
+</home_edu/edu-cmc-sqi21/edu-cmc-sqi21-01/Prac/prac/sem8/omp> was used as the working directory.
+Started at Tue Mar  7 20:11:36 2023
+Terminated at Tue Mar  7 20:11:45 2023
+Results reported at Tue Mar  7 20:11:45 2023
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#BSUB -n 1
+#BSUB -W 00:15
+#BSUB -o "./out_files/6000/2.out"
+#BSUB -e "./err_files/6000/2.err"
+#BSUB -R "span[hosts=1]"
+OMP_NUM_THREADS=2 ./prog 6000
+
+------------------------------------------------------------
+
+TERM_OWNER: job killed by owner.
+Exited with exit code 143.
+
+Resource usage summary:
+
+    CPU time :                                   15.00 sec.
+    Max Memory :                                 830 MB
+    Average Memory :                             622.75 MB
+    Total Requested Memory :                     -
+    Delta Memory :                               -
+    Max Swap :                                   -
+    Max Processes :                              4
+    Max Threads :                                6
+    Run time :                                   11 sec.
+    Turnaround time :                            312 sec.
+
+The output (if any) follows:
+
+
+
+PS:
+
+Read file <./err_files/6000/2.err> for stderr output of this job.
+
