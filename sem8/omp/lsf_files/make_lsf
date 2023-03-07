@@ -1,0 +1,29 @@
+#! /bin/bash
+
+
+
+for j in 1000 4000 6000
+do
+rm -rf ./$j
+mkdir ./$j
+for ((i = 1; i <= 2; i *= 2))
+do
+echo "#BSUB -n 1
+#BSUB -W 00:15
+#BSUB -o \"./out_files/$j/$i.out\"
+#BSUB -e \"./err_files/$j/$i.err\"
+#BSUB -R \"span[hosts=1]\"
+OMP_NUM_THREADS=$i ./prog $j">./$j/$i.lsf
+done
+
+for ((i = 4 ; i <= 32; i *= 2))
+do
+M=$(( $i / 2 ))
+echo "#BSUB -W 00:15
+#BSUB -o \"./out_files/$j/$i.out\"
+#BSUB -e \"./err_files/$j/$i.err\"
+#BSUB -R \"affinity[core($M)]\"
+OMP_NUM_THREADS=$i
+/polusfs/lsf/openmp/launchOpenMP.py ./prog $j">./$j/$i.lsf
+done
+done

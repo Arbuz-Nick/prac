@@ -5,7 +5,7 @@ void Matrix::generate() {
   data = new double[size * size];
   for (int i = 0; i < size; i++)
     for (int j = 0; j < size; j++)
-      data[i * size + j] = (i+1)/(j+1)+10;
+      data[i * size + j] = (i+1)/(j+1)+10;//(double)(i + 1) / (j + 1) + 10;
 }
 
 void Matrix::print() {
