@@ -1,5 +1,6 @@
 #include "omp.h"
 #include <iostream>
+#include <fstream>
 #include <vector>
 #include "matrix.h"
 
@@ -13,11 +14,11 @@ Matrix matmul(Matrix &A, Matrix &B)
     int size = A.size;
     Matrix C(size);
     C.generate();
-#pragma omp parallel for
     for (int i = 0; i < size; i++)
     {
         for (int k = 0; k < size; k++)
         {
+#pragma omp parallel for
             for (int j = 0; j < size; j++)
             {
                 C.data[i * size + j] += A.data[i * size + k] * B.data[k * size + j];
@@ -44,10 +45,10 @@ int main(int argc, char const *argv[])
     A.generate();
     Matrix B(n);
     B.generate();
-    Matrix C;
+    // Matrix C;
 
     double start_time = now();
-    C = matmul(A, B);
+    matmul(A, B);
     double end_time = now();
     std::ofstream result;
     result.open("result_omp_polus.csv", std::ios_base::app);
