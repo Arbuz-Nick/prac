@@ -27,7 +27,7 @@ Matrix matmul(Matrix &A, Matrix &B)
 #pragma omp barrier
         }
     }
-    C.print();
+    //C.print();
     return C;
 }
 

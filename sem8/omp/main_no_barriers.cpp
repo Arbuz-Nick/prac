@@ -19,14 +19,14 @@ Matrix matmul(Matrix &A, Matrix &B)
     {
         for (int k = 0; k < size; k++)
         {
-#pragma omp for
+#pragma omp for nowait
             for (int j = 0; j < size; j++)
             {
                 C.data[i * size + j] += A.data[i * size + k] * B.data[k * size + j];
             }
         }
     }
-    C.print();
+    //C.print();
     return C;
 }
 
