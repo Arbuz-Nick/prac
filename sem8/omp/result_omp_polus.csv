@@ -156,3 +156,14 @@ MulTime;Nthreads;MatrixSize;RunType
 129.037;16;6000;no_barriers
 169.509;32;6000;no_barriers
 265.525;32;6000;no_barriers
+0.076801;160;10;no_barriers
+0.101134;160;10;no_barriers
+0.0709585;160;10;no_barriers
+0.0655456;160;10;no_barriers
+0.0705903;160;10;no_barriers
+0.00767405;1;10;no_barriers
+0.00761661;1;10;no_barriers
+0.0820819;160;10;no_barriers
+0.238187;160;10;no_barriers
+0.186604;160;10;no_barriers
+0.276902;160;10;no_barriers
