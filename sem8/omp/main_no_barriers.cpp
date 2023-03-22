@@ -14,6 +14,7 @@ Matrix matmul(Matrix &A, Matrix &B)
     int size = A.size;
     Matrix C(size);
     C.generate();
+#pragma omp parallel
     for (int i = 0; i < size; i++)
     {
         for (int k = 0; k < size; k++)
@@ -25,6 +26,7 @@ Matrix matmul(Matrix &A, Matrix &B)
             }
         }
     }
+    C.print();
     return C;
 }
 
@@ -54,6 +56,6 @@ int main(int argc, char const *argv[])
     result.open("result_omp_polus.csv", std::ios_base::app);
     result << end_time - start_time << ";" << omp_get_max_threads() << ";" << n << ";no_barriers" << std::endl;
     result.close();
-//    C.print();
+    // C.print();
     return 0;
 }
