@@ -1,0 +1,26 @@
+#! /bin/bash
+rm -rf ./out_files/omp/1000/*.out
+rm -rf ./err_files/omp/1000/*.err
+
+rm -rf ./out_files/omp/5000/*.out
+rm -rf ./err_files/omp/5000/*.err
+
+rm -rf ./out_files/omp/10000/*.out
+rm -rf ./err_files/omp/10000/*.err
+
+echo "Time;Nthreads;RunType;Size">result_mpi_polus.csv
+
+
+./make_dirs
+
+make problem
+for ((k = 0; k < 4; k += 1))
+do
+for j in 1000 5000 10000
+do
+for ((i = 1; i <= 32; i *= 2))
+do
+mpisubmit.pl -p $i -w 00:30 --stdout ./out_files/$j/$i.out --stderr ./err_files/$j/$i.err ./prog -- polus $j
+done
+done
+done
