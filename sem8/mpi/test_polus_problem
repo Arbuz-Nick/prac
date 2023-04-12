@@ -8,7 +8,7 @@ rm -rf ./err_files/omp/5000/*.err
 rm -rf ./out_files/omp/10000/*.out
 rm -rf ./err_files/omp/10000/*.err
 
-echo "Time;Nthreads;RunType;Size">result_mpi_polus.csv
+# echo "Time;Nthreads;RunType;Size">result_mpi_polus.csv
 
 
 ./make_dirs
