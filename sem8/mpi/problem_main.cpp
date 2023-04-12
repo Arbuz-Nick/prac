@@ -39,14 +39,13 @@ int main(int argc, char **argv)
     MPI_Comm_size(MPI_COMM_WORLD, &size);
 
     int *send_buf = new int[msg_size];
-    int *recv_buf = new int[msg_size * (size - 1)];
+    int *recv_buf = new int[msg_size * msg_size];
 
     for (int i = 0; i < msg_size; i++)
     {
         send_buf[i] = rank;
-        //std::cout << send_buf[i] << ' ';
     }
-    
+
     MPI_Request req_send, req_recv;
 
     if (rank == 0)
@@ -54,22 +53,28 @@ int main(int argc, char **argv)
         bench_timer_start();
     }
     MPI_Barrier(MPI_COMM_WORLD);
-    for (int i = 0; i < size; i++)
+    int k = -1;
+    for (int i = 0; i < msg_size; i++)
     {
-        if (i == rank)
-        {
-            continue;
-        }
 
-        MPI_Isend(send_buf, msg_size, MPI_INT, i, MSG_TAG, MPI_COMM_WORLD, &req_send);
-        MPI_Irecv(&recv_buf[msg_size * (i < rank ? i : i - 1)], msg_size, MPI_INT, i, MSG_TAG, MPI_COMM_WORLD, &req_recv);
+        /*
+        0 1 2 3 5 0 1 2 3
+           0 1 2 3 4 5 6 7 8
+           0 1 2 3 0 1 2 3 0
+        0: 1 2 3 1 2 3 1 2 3
+        1: 2 3 0 2 3 0 2 3 0
+        2: 3 0 1 3 0 1 3 0 1
+        3: 0 1 2 0 1 2 0 1 2
+        */
+        
+        MPI_Isend(send_buf, msg_size, MPI_INT, (rank + size - 1 - (i % (size - 1))) % size, MSG_TAG, MPI_COMM_WORLD, &req_send);
+        MPI_Irecv(&recv_buf[msg_size * i], msg_size, MPI_INT, (rank + 1 + (i % (size - 1))) % size, MSG_TAG, MPI_COMM_WORLD, &req_recv);
 
         MPI_Wait(&req_send, MPI_STATUS_IGNORE);
         MPI_Wait(&req_recv, MPI_STATUS_IGNORE);
-        
         for (int j = 0; j < msg_size; j++)
         {
-            if (recv_buf[msg_size * (i < rank ? i : i - 1) + j] != i)
+            if (recv_buf[msg_size * i + j] != (rank + 1 + (i % (size - 1))) % size)
             {
                 std::cerr << "Error: received value " << recv_buf[msg_size * (i < rank ? i : i - 1) + j] << " from process " << i << std::endl;
                 break;
@@ -86,13 +91,14 @@ int main(int argc, char **argv)
         path += ".csv";
         out_file.open(path, std::ios_base::app);
         out_file << search_time << ";" << size << ";"
-                 << "problem" << ";" << argv[2] << std::endl;
+                 << "problem"
+                 << ";" << argv[2] << std::endl;
         out_file.close();
     }
     /*
     if (rank == 1)
     {
-        for (int i = 0; i < size - 1; i++)
+        for (int i = 0; i < msg_size; i++)
         {
             for (int j = 0; j < msg_size; j++)
             {
@@ -102,7 +108,6 @@ int main(int argc, char **argv)
         }
     }
     */
-
     delete[] recv_buf;
 
     MPI_Finalize();

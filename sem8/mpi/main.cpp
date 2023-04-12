@@ -40,45 +40,41 @@ int main(int argc, char **argv)
     MPI_Comm_size(MPI_COMM_WORLD, &size);
 
     int *send_buf = new int[msg_size];
-    int *recv_buf = new int[msg_size * (size - 1)];
+    int *recv_buf = new int[msg_size * msg_size];
 
     for (int i = 0; i < msg_size; i++)
     {
         send_buf[i] = rank;
     }
-
-    MPI_Request *send_reqs = new MPI_Request[size - 1];
-    MPI_Request *recv_reqs = new MPI_Request[size - 1];
-    MPI_Status *statuses = new MPI_Status[size - 1];
+    MPI_Request *send_reqs = new MPI_Request[msg_size];
+    MPI_Request *recv_reqs = new MPI_Request[msg_size];
+    MPI_Status *statuses = new MPI_Status[msg_size];
     if (rank == 0)
     {
         bench_timer_start();
     }
     MPI_Barrier(MPI_COMM_WORLD);
-    for (int i = 0; i < size; i++)
+    int k = -1;
+    for (int i = 0; i < msg_size; i++)
     {
-        if (i == rank)
-        {
-            continue;
-        }
 
-        MPI_Send_init(send_buf, msg_size, MPI_INT, i, MSG_TAG, MPI_COMM_WORLD, &send_reqs[i < rank ? i : i - 1]);
-        MPI_Recv_init(&recv_buf[msg_size * (i < rank ? i : i - 1)], msg_size, MPI_INT, i, MSG_TAG, MPI_COMM_WORLD, &recv_reqs[i < rank ? i : i - 1]);
+        MPI_Send_init(send_buf, msg_size, MPI_INT, (rank + size - 1 - (i % (size - 1))) % size, MSG_TAG, MPI_COMM_WORLD, &send_reqs[i]);
+        MPI_Recv_init(&recv_buf[msg_size * i], msg_size, MPI_INT, (rank + 1 + (i % (size - 1))) % size, MSG_TAG, MPI_COMM_WORLD, &recv_reqs[i]);
     }
 
-    MPI_Startall(size - 1, send_reqs);
-    MPI_Startall(size - 1, recv_reqs);
+    MPI_Startall(msg_size, send_reqs);
+    MPI_Startall(msg_size, recv_reqs);
 
-    MPI_Waitall(size - 1, send_reqs, statuses);
-    MPI_Waitall(size - 1, recv_reqs, statuses);
+    MPI_Waitall(msg_size, send_reqs, statuses);
+    MPI_Waitall(msg_size, recv_reqs, statuses);
 
-    for (int i = 0; i < size - 1; i++)
+    for (int i = 0; i < msg_size; i++)
     {
         for (int j = 0; j < msg_size; j++)
         {
-            if (recv_buf[msg_size * i + j] != (i < rank ? i : i + 1))
+            if (recv_buf[msg_size * i + j] != (rank + 1 + (i % (size - 1))) % size)
             {
-                std::cerr << "Error: received value " << recv_buf[msg_size * i + j] << " from process " << (i < rank ? i : i + 1) << std::endl;
+                std::cerr << "Error: received value " << recv_buf[msg_size * i + j] << " from process " << (rank + i + 1 + (i + 1) / size) % size << std::endl;
                 break;
             }
         }
@@ -93,14 +89,14 @@ int main(int argc, char **argv)
         path += ".csv";
         out_file.open(path, std::ios_base::app);
         out_file << search_time << ";" << size << ";"
-                 << "normal" << ";" << argv[2] << std::endl;
+                 << "normal"
+                 << ";" << argv[2] << std::endl;
         out_file.close();
     }
-    
     /*
     if (rank == 1)
     {
-        for (int i = 0; i < size - 1; i++)
+        for (int i = 0; i < msg_size; i++)
         {
             for (int j = 0; j < msg_size; j++)
             {
@@ -110,7 +106,6 @@ int main(int argc, char **argv)
         }
     }
     */
-
     delete[] recv_buf;
     delete[] send_reqs;
     delete[] recv_reqs;
