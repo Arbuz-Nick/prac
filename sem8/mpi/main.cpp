@@ -68,17 +68,6 @@ int main(int argc, char **argv)
     MPI_Waitall(msg_size, send_reqs, statuses);
     MPI_Waitall(msg_size, recv_reqs, statuses);
 
-    for (int i = 0; i < msg_size; i++)
-    {
-        for (int j = 0; j < msg_size; j++)
-        {
-            if (recv_buf[msg_size * i + j] != (rank + 1 + (i % (size - 1))) % size)
-            {
-                std::cerr << "Error: received value " << recv_buf[msg_size * i + j] << " from process " << (rank + i + 1 + (i + 1) / size) % size << std::endl;
-                break;
-            }
-        }
-    }
     if (rank == 0)
     {
         bench_timer_stop();

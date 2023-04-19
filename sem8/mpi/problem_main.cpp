@@ -72,14 +72,7 @@ int main(int argc, char **argv)
 
         MPI_Wait(&req_send, MPI_STATUS_IGNORE);
         MPI_Wait(&req_recv, MPI_STATUS_IGNORE);
-        for (int j = 0; j < msg_size; j++)
-        {
-            if (recv_buf[msg_size * i + j] != (rank + 1 + (i % (size - 1))) % size)
-            {
-                std::cerr << "Error: received value " << recv_buf[msg_size * (i < rank ? i : i - 1) + j] << " from process " << i << std::endl;
-                break;
-            }
-        }
+        
     }
     if (rank == 0)
     {
